@@ -5,14 +5,17 @@ t_list *sa(t_list *tail)
 {
     t_list *tmp;
     tmp = tail->prev;
+    //If there are at least two previos elementes, if not
+    //the second conditioin will check if at least there is two elemnts
+    //it would do nothing in third case
     if (tail->prev->prev)
     {
-
         tail->prev->prev->next = tail;
         tail->prev = tail->prev->prev;
         tail->next = tmp;
         tmp->prev = tail;
         tmp->next = NULL;
+    
     }
     else if(tail->prev)
     {

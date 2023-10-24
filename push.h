@@ -24,6 +24,9 @@ t_list *sb(t_list *head);
 
 void tsb(t_list **arr);
 void tsa(t_list **arr);
+void pb(t_list **ends);
+void pa(t_list **ends);
+
 
 
 #endif

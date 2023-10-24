@@ -38,7 +38,7 @@ t_list *new_element(t_list *current, int x, int index)
     new->x = x;
     new->index = index;
     new->next = NULL;
-    printf("tindex %d, address new\t%p\n", index, new);
+  //  printf("tindex %d, address new\t%p\n", index, new);
     return new;
 }
 
