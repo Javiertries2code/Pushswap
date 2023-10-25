@@ -26,6 +26,14 @@ void tsb(t_list **arr);
 void tsa(t_list **arr);
 void pb(t_list **ends);
 void pa(t_list **ends);
+void ra(t_list **ends);
+void rb(t_list **ends);
+void rra(t_list **ends);
+void rrb(t_list **ends);
+void rrr(t_list **ends);
+
+
+
 
 
 

@@ -44,24 +44,35 @@ int main(int argc, char *argv[])
     // ends[3] = tail_b;
     printf("\nStack A\n");
 
-    print(ends[0]);
-    printf("\n");
-    rprint(ends[1]);
-    pb(ends);
+    //print(ends[0]);
+    //printf("\n");
+    //rprint(ends[1]);
+    /*pb(ends);
     pb(ends);
     pb(ends);
     pa(ends);
-    printf("\nafter 3xpb + pa");
-    printf("\nStack A\n");
+    pb(ends);
+    pb(ends);*/
+    pb(ends);
+    pb(ends);
+    pb(ends);
+        printf("\nAfter pb pb pb before rrr\n");
 
     print(ends[0]);
     printf("\n");
-    rprint(ends[1]);
-    printf("\nStack B\n");
+    print(ends[2]);
+    rrr(ends);
+        printf("\nAfter pb pb pb after rrr\n");
+
+
+    print(ends[0]);
+    printf("\n");
+    print(ends[2]);
+    /*printf("\nStack B\n");
 
     print(ends[2]);
     printf("\n");
-    rprint(ends[3]);
+    rprint(ends[3]);*/
 
     free_ahead(ends[0]);
     // no need to free B, as all should be ordered in A

@@ -1,9 +1,5 @@
 #include "push.h"
 
-//    t_list *ends[2] = {head_a, tail_a, head_b, tail_b};//
-
-// gotta change 3 2  1 0 
-
 void pa(t_list **ends)
 {
     t_list *tmp;
