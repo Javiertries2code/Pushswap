@@ -1,45 +1,30 @@
 #include "push.h"
-
+// if it doesnt fit by lines, i can be sent as a parameter. less pretty though.
 void ss(t_list **ends)
 {
     t_list *tmp;
-    t_list *tmp_b;
-    t_list *tail_a = ends[1];
-    t_list *tail_b = ends[3];
-    //    t_list *ends[4] = {head_a, tail_a, head_b, tail_b};
-    tmp = tail_a->prev;
-    if (tail_a->prev->prev)
-    {
+    int i;
 
-        tail_a->prev->prev->next = tail_a;
-        tail_a->prev = tail_a->prev->prev;
-        tail_a->next = tmp;
-        tmp->prev = tail_a;
+    i = 1;
+    while (i != 5)
+    {
+        tmp = ends[i]->prev;
+        if (ends[i]->prev->prev)
+    {
+         ends[i]->prev->prev->next =  ends[i];
+         ends[i]->prev =  ends[i]->prev->prev;
+         ends[i]->next = tmp;
+        tmp->prev =  ends[i];
         tmp->next = NULL;
     }
-    else if (tail_a->prev)
+    else if( ends[i]->prev)
     {
-        tail_a->prev = NULL;
-        tmp->prev = tail_a;
-        tail_a->next = tmp;
+         ends[i]->prev = NULL;
+          ends[i]->prev->next =  ends[i];
+        tmp->prev =  ends[i];
+         ends[i]->next = tmp;
         tmp->next = NULL;
     }
-    // I eliminated the returns as the changes are either done or not.
-    tmp_b = tail_b->prev;
-    if (tail_b->prev->prev)
-    {
-
-        tail_b->prev->prev->next = tail_b;
-        tail_b->prev = tail_b->prev->prev;
-        tail_b->next = tmp_b;
-        tmp_b->prev = tail_b;
-        tmp_b->next = NULL;
-    }
-    else if (tail_b->prev)
-    {
-        tail_b->prev = NULL;
-        tmp_b->prev = tail_b;
-        tail_b->next = tmp_b;
-        tmp_b->next = NULL;
+        i = i + 2;
     }
 }

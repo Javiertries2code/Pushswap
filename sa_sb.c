@@ -1,55 +1,48 @@
 #include "push.h"
-
+// If there are at least two previos elementes, if not
+// the second conditioin will check if at least there is two elemnts
+// it would do nothing in third case
 // when having only two members, it should also be changed the head *
-t_list *sa(t_list *tail)
+void sa(t_list **ends)
 {
     t_list *tmp;
-    tmp = tail->prev;
-    //If there are at least two previos elementes, if not
-    //the second conditioin will check if at least there is two elemnts
-    //it would do nothing in third case
-    if (tail->prev->prev)
+    tmp = ends[1]->prev;
+    if (ends[1]->prev->prev)
     {
-        tail->prev->prev->next = tail;
-        tail->prev = tail->prev->prev;
-        tail->next = tmp;
-        tmp->prev = tail;
-        tmp->next = NULL;
-    
-    }
-    else if(tail->prev)
-    {
-        tail->prev = NULL;
-        tmp->prev = tail;
-        tail->next = tmp;
+        ends[1]->prev->prev->next = ends[1];
+        ends[1]->prev = ends[1]->prev->prev;
+        ends[1]->next = tmp;
+        tmp->prev = ends[1];
         tmp->next = NULL;
     }
-    else
-        return tail;
-    return tmp;
+    else if (ends[1]->prev)
+    {
+        ends[1]->prev->next = ends[1];
+        ends[1]->prev = NULL;
+        tmp->prev = ends[1];
+        ends[1]->next = tmp;
+        tmp->next = NULL;
+    }
 }
 
-t_list *sb(t_list *tail)
+void sb(t_list **ends)
 {
     t_list *tmp;
-    tmp = tail->prev;
-    if (tail->prev->prev)
+    tmp = ends[3]->prev;
+    if (ends[3]->prev->prev)
     {
-
-        tail->prev->prev->next = tail;
-        tail->prev = tail->prev->prev;
-        tail->next = tmp;
-        tmp->prev = tail;
+        ends[3]->prev->prev->next = ends[3];
+        ends[3]->prev = ends[3]->prev->prev;
+        ends[3]->next = tmp;
+        tmp->prev = ends[3];
         tmp->next = NULL;
     }
-    else if(tail->prev)
+    else if (ends[3]->prev)
     {
-        tail->prev = NULL;
-        tmp->prev = tail;
-        tail->next = tmp;
+        ends[3]->prev->next = ends[3];
+        ends[3]->prev = NULL;
+        tmp->prev = ends[3];
+        ends[3]->next = tmp;
         tmp->next = NULL;
     }
-    else
-        return tail;
-    return tmp;
 }
