@@ -43,23 +43,49 @@ int main(int argc, char *argv[])
     // ends[2] = head_b;
     // ends[3] = tail_b;
 
+    //pb(ends);
+   // sa(ends);
     pb(ends);
-   // pb(ends);
-   // pb(ends);
+    pb(ends);
+    pb(ends);
+
+    //  sb(ends);
+    // sb(ends);
+    // sb(ends);
     printf("\nBefore SS\n");
 
     print(ends[0]);
     printf("\n");
     print(ends[2]);
-    //sa(ends);
-    //sb(ends);
-     ss(ends);
-    printf("\nAfter Sa, sb\n");
+    pa(ends);
+    pa(ends);
+    sa(ends);
+     sb(ends);
+ printf("\naftersa te elemnts\n");
 
     print(ends[0]);
     printf("\n");
     print(ends[2]);
 
+//sa(ends);
+  // sa(ends);
+  // sa(ends);
+    /*pa(ends);
+    pa(ends);
+    pa(ends);
+     pa(ends);
+    pa(ends);
+    pa(ends);*/
+   // pa(ends);
+
+    // sa(ends);
+    printf("\nAfter S\n");
+
+    print(ends[0]);
+    printf("\n");
+    print(ends[2]);
+//sa(ends);
+  
     free_ahead(ends[0]);
     // no need to free B, as all should be ordered in A
     // free_ahead(ends[2]);
