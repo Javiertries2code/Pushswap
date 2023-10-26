@@ -43,30 +43,36 @@ int main(int argc, char *argv[])
     // ends[2] = head_b;
     // ends[3] = tail_b;
 
-    //pb(ends);
-   // sa(ends);
     pb(ends);
-    pb(ends);
-    pb(ends);
+//    // sa(ends);
+   pb(ends);
+  pb(ends);
+
 
     //  sb(ends);
     // sb(ends);
     // sb(ends);
-    printf("\nBefore SS\n");
+     sa(ends);
+
+        sb(ends);
+
 
     print(ends[0]);
+    printf("\n");    
     printf("\n");
-    print(ends[2]);
-    pa(ends);
-    pa(ends);
-    sa(ends);
-     sb(ends);
- printf("\naftersa te elemnts\n");
 
-    print(ends[0]);
-    printf("\n");
     print(ends[2]);
+    
+    //sb(ends);
+//  printf("\nAFTER SA SB\n");
 
+//     print(ends[0]);
+//     printf("\n");
+//     print(ends[2]);
+// pa(ends);
+// pa(ends);
+//  sa(ends);
+//     sb(ends);
 //sa(ends);
   // sa(ends);
   // sa(ends);
@@ -79,11 +85,11 @@ int main(int argc, char *argv[])
    // pa(ends);
 
     // sa(ends);
-    printf("\nAfter S\n");
+    // printf("\nAFTER 2X PA, SA, SB\n");
 
-    print(ends[0]);
-    printf("\n");
-    print(ends[2]);
+    // print(ends[0]);
+    // printf("\n");
+    // print(ends[2]);
 //sa(ends);
   
     free_ahead(ends[0]);
