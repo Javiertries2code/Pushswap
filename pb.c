@@ -21,11 +21,19 @@ void pb(t_list **ends)
         ends[1] = NULL;
     }
 
-    tmp->prev = NULL;
-    if (ends[2])
-        ends[2]->prev = tmp;
-    tmp->next = ends[2];
-    ends[2] = tmp;
-    if (!ends[3])
-        ends[3] = ends[2];
+    tmp->next = NULL;
+    if (ends[3])
+        ends[3]->next = tmp;
+    tmp->prev = ends[3];
+    ends[3] = tmp;
+    if (!ends[2])
+        ends[2] = ends[3];
 }
+
+// tmp->prev = NULL;
+//     if (ends[2])
+//         ends[2]->prev = tmp;
+//     tmp->next = ends[2];
+//     ends[2] = tmp;
+//     if (!ends[3])
+//         ends[3] = ends[2];

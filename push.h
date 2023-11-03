@@ -21,8 +21,9 @@ void free_ahead(t_list *tail);
 void free_forward(t_list *head);
 
 
-void tsb(t_list **arr);
-void tsa(t_list **arr);
+void testprint(t_list **ends);
+void print_stack(t_list **ends);
+
 
 void pb(t_list **ends);
 void pa(t_list **ends);
@@ -34,7 +35,7 @@ void rrr(t_list **ends);
 void sa(t_list **ends);
 void sb(t_list **ends);
 void ss(t_list **ends);
-
+void rr(t_list **ends);
 
 
 

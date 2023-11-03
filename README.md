@@ -1,4 +1,20 @@
 # Pushswap
-school 42, pushswap project
-OK
-So the problem is on SA, when flipping less than two elemnts only
+Test
+
+
+
+
+
+  RR AUN NO IMPLEMENTADO
+
+Check list
+
+1 - Does it create list, First last values, addresses
+    OK in all conditions
+
+2 - PA PB.
+   OK
+
+ 4 -sa sb
+  ok
+    

@@ -4,8 +4,9 @@ void rr(t_list **ends)
 {
     t_list *tmp;
    
-    if (ends[2] == NULL || ends[3] == NULL || ends[0] == NULL || ends[1] == NULL)
+    if (!ends[1] || !ends[3] || !ends[3]->prev || !ends[1]->prev)
         return;
+
     tmp = ends[3]->prev;
     ends[2]->prev = ends[3];
     ends[3]->prev->next = NULL;

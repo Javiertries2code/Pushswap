@@ -4,7 +4,7 @@ void rrr(t_list **ends)
 {
     t_list *tmp;
    
-    if (ends[0] == NULL || ends[1] == NULL || ends[2] == NULL || ends[3] == NULL )
+    if (!ends[0] || !ends[2] || !ends[0]->next || !ends[2]->next )
         return;
     tmp = ends[0]->next;
     ends[1]->next = ends[0];

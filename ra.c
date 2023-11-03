@@ -4,7 +4,7 @@ void ra(t_list **ends)
 {
     t_list *tmp;
    
-    if (ends[0] == NULL || ends[1] == NULL)
+    if (ends[1] == NULL || ends[1]->prev == NULL)
         return;
     tmp = ends[1]->prev;
     ends[0]->prev = ends[1];
