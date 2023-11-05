@@ -1,9 +1,5 @@
-#include "push.h"
+#include "../push.h"
 
-// If there are at least two previos elementes, if not
-// the second conditioin will check if at least there is two elemnts
-// it would do nothing in third case
-// when having only two members, it should also be changed the head *
 void	sa(t_list **ends, void *print)
 {
 	t_list	*tmp;

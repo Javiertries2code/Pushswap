@@ -6,7 +6,7 @@ int	main(int argc, char *argv[])
 	int i;
 	t_list *current_a;
 
-	val_input( argc, argv);
+	val_input( argc, argv, ST_EVAL);
 	t_list *ends[4];
 	if (argc < 2)
 		exit(1);

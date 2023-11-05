@@ -1,4 +1,4 @@
-#include "push.h"
+#include "../push.h"
 
 // if it doesnt fit by lines, i can be sent i and temp as a parameter. perfect fit
 //void	ss(t_list **ends);

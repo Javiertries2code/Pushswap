@@ -1,4 +1,4 @@
-#include "push.h"
+#include "../push.h"
 
 void pa(t_list **ends, void *print)
 {
