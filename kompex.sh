@@ -5,7 +5,7 @@
 OUTPUT_PROGRAM="push"
 
 # Lista de archivos fuente
-SOURCE_FILES=("push.c" "pa.c" "pb.c" "ra.c" "rb.c" "rr.c" "rra.c" "rrb.c" "rrr.c" "sa_sb.c" "handlers.c" "ss.c")
+SOURCE_FILES=("push.c" "pa.c" "pb.c" "ra.c" "rb.c" "rr.c" "rra.c" "rrb.c" "rrr.c" "sa_sb.c" "handlers.c" "ss.c" "utils.c")
 
 
 # Opciones de compilación

@@ -5,6 +5,8 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	t_list *current_a;
+	//t_list *tmp = NULL;
+
 
 	t_list *ends[4];
 	if (argc < 2)
@@ -29,7 +31,7 @@ int	main(int argc, char *argv[])
 	ends[2] = NULL;
 	ends[3] = NULL;
 	//
-	//
+
 
 	print_stack(ends);
 	free_ahead(ends[0]);
