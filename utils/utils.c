@@ -52,13 +52,15 @@ long long int	ft_atoi(const char *str)
 }
 
 // para buscar coma o punto
+//int				i;
+//i = 0;
+//sobraba parece ser
 char	*ft_strchr(const char *s, int c)
 {
-	int				i;
+	
 	unsigned int	len;
 
 	len = ft_strlen(s);
-	i = 0;
 	if (!s)
 		return (NULL);
 	if ((char)c == '\0')
@@ -70,6 +72,25 @@ char	*ft_strchr(const char *s, int c)
 		s++;
 	}
 	return (NULL);
+}
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	ncopied;
+	size_t	i;
+
+	ncopied = ft_strlen(src);
+	i = 0;
+	if (dstsize)
+	{
+		while (src[i] != '\0' && i < (dstsize - 1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (ncopied);
 }
 
 static size_t	counter(const char *s, char c)

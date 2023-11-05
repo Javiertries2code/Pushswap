@@ -12,7 +12,7 @@ HANDLERS_FILES = \
 
 OBJECTS = $(UTILS:.c=.o) $(SUPPORT:.c=.o) $(HANDLERS:.c=.o)
 
-UTILS := $(addprefix $(DIR_UTILS), $(SRC_FILES_S))
+UTILS := $(addprefix $(DIR_UTILS), $(UTILS_FILES))
 SUPPORT := $(addprefix $(DIR_SUPPORT),  $(SUPPORT_FILES))
 HANDLERS := $(addprefix $(DIR_HANDLERS), $(HANDLERS_FILES))
 
@@ -25,7 +25,7 @@ $(NAME):$(OBJECTS)
 	$(CC) $(CFLAGS) -o $(NAME) main.c $(UTILS) $(HANDLERS) $(SUPPORT) 
 
 clean:
-	rm -rf  $(NAME) 
+	rm -rf  $(NAME) $(OBJECTS)
 
 fclean: clean
 	
