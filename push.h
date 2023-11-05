@@ -47,6 +47,8 @@ void				ss(t_list **ends, t_list *tmp, int i, void *print);
 void				rr(t_list **ends, void *print);
 void				*print_fun(char *str, int num, void **numbers);
 long long int		ft_atoi(const char *str);
+char	**ft_split(const char *s, char c);
+char	*ft_strchr(const char *s, int c);
 
  void val_input(int argc, char *argv[], int eval);
 // find_duplicate(long long int num, char **numbers);
