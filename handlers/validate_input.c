@@ -1,6 +1,6 @@
 #include "../push.h"
 
-int	count_split(char **argv)
+int	count_split(void **argv)
 {
 	int	count;
 
@@ -37,7 +37,7 @@ void val_input(int argc, char *argv[], int eval)
 	else if (argc == 2 && (ft_strchr(argv[1], ' ') || ft_strchr(argv[1], '\t')))
 	{
 		numbers = (char **)ft_split(argv[1], ' '); // separadno por espacios
-		argc = count_split(numbers);
+		argc = count_split((void *)numbers);
         eval = ND_EVAL;
 	}
 	// not sure in here  if when exiting it does keeps the memory of the caling function somewhere.
