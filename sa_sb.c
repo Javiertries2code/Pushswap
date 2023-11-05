@@ -4,11 +4,11 @@
 // the second conditioin will check if at least there is two elemnts
 // it would do nothing in third case
 // when having only two members, it should also be changed the head *
-void	sa(t_list **ends)
+void	sa(t_list **ends, void *print)
 {
 	t_list	*tmp;
 
-	if ( ends[1] == NULL || ends[1]->prev == NULL)
+	if ( ends[1] == NULL || !ends[1]->prev|| !print)
 		return ;
 	tmp = ends[1]->prev;
 	if (ends[1]->prev->prev)
@@ -32,11 +32,11 @@ void	sa(t_list **ends)
 	}
 }
 
-void	sb(t_list **ends)
+void	sb(t_list **ends, void *print)
 {
 	t_list	*tmp;
 printf("\naddress ends[3] sb  - %p\n", ends[3]);
-	if (ends[3] == NULL || ends[3]->prev == NULL )
+	if (ends[3] == NULL || !ends[3]->prev || !print)
 	{
 	
 		return ;

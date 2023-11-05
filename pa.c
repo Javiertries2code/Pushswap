@@ -1,10 +1,10 @@
 #include "push.h"
 
-void pa(t_list **ends)
+void pa(t_list **ends, void *print)
 {
     t_list *tmp;
    
-    if (ends[2] == NULL || ends[3] == NULL)
+    if (ends[2] == NULL || !ends[3] || !print)
         return;
     tmp = ends[3];
 

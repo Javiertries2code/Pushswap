@@ -24,18 +24,22 @@ void free_forward(t_list *head);
 void testprint(t_list **ends);
 void print_stack(t_list **ends);
 
+//to  print the letters everytime i call a funcion, i send a function printing and
+//returning a null, so i just need to handle it in the null check
 
-void pb(t_list **ends);
-void pa(t_list **ends);
-void ra(t_list **ends);
-void rb(t_list **ends);
-void rra(t_list **ends);
-void rrb(t_list **ends);
-void rrr(t_list **ends);
-void sa(t_list **ends);
-void sb(t_list **ends);
-void ss(t_list **ends);
-void rr(t_list **ends);
+void pb(t_list **ends, void *print);
+void pa(t_list **ends, void *print);
+void ra(t_list **ends, void *print);
+void rb(t_list **ends, void *print);
+void rra(t_list **ends, void *print);
+void rrb(t_list **ends, void *print);
+void rrr(t_list **ends, void *print);
+void sa(t_list **ends, void *print);
+void sb(t_list **ends, void *print);
+//void ss(t_list **ends);
+void	ss(t_list **ends, t_list *tmp, int i, void *print);
+void rr(t_list **ends, void *print);
+void *print_fun(char *str, int num);
 
 
 

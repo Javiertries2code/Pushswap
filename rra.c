@@ -1,10 +1,10 @@
 #include "push.h"
 
-void rra(t_list **ends)
+void rra(t_list **ends, void *print)
 {
     t_list *tmp;
    
-    if (!ends[0] || !ends[0]->next)
+    if (!ends[0] || !ends[0]->next || !print)
         return;
     tmp = ends[0]->next;
     ends[1]->next = ends[0];
