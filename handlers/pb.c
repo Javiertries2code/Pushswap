@@ -1,4 +1,4 @@
-#include "push.h"
+#include "../push.h"
 
 //    t_list *ends[4] = {head_a, tail_a, head_b, tail_b};
 

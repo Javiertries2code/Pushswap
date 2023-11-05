@@ -1,4 +1,4 @@
-#include "push.h"
+#include "../push.h"
 
 void rr(t_list **ends, void *print)
 {
