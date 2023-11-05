@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 typedef struct s_list
 {
@@ -13,6 +14,11 @@ typedef struct s_list
     struct s_list *prev;
 } t_list;
 
+enum Calls{
+    ERROR,
+};
+
+typedef Calls Calls;
 
 void print(t_list *head);
 void rprint(t_list *tail);
@@ -40,6 +46,9 @@ void sb(t_list **ends, void *print);
 void	ss(t_list **ends, t_list *tmp, int i, void *print);
 void rr(t_list **ends, void *print);
 void *print_fun(char *str, int num);
+long long int	ft_atoi(const char *str)
+val_input(int argc, char *argv[]);
+find_duplicate(long long int num, char **numbers);
 
 
 
