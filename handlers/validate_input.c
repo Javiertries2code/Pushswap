@@ -23,20 +23,20 @@ int	find_duplicate(long long int num, char **numbers)
 	while (numbers[i])
 		if (ft_atoi(numbers[i++]) == num)
 			return (1);
-	return (NULL);
+	return (0);
 }
 
 void val_input(int argc, char *argv[], int eval)
 {
-	long long int num;
+	//long long int num;
 	char **numbers;
 	if (argc < 2)
 		exit(1);
-	else if (argc = 2 && !(ft_strchr(argv[1], ' ') || ft_strchr(argv[1], '\t')))
+	else if (argc == 2 && !(ft_strchr(argv[1], ' ') || ft_strchr(argv[1], '\t')))
 		print_fun("Error one number", ERROR, NULL);
-	else if (argc = 2 && (ft_strchr(argv[1], ' ') || ft_strchr(argv[1], '\t')))
+	else if (argc == 2 && (ft_strchr(argv[1], ' ') || ft_strchr(argv[1], '\t')))
 	{
-		numbers = ft_split(argv[1], " "); // separadno por espacios
+		numbers = (char **)ft_split(argv[1], ' '); // separadno por espacios
 		argc = count_split(numbers);
         eval = ND_EVAL;
 	}
@@ -52,9 +52,8 @@ void val_input(int argc, char *argv[], int eval)
 	{
 		if (ft_strchr(argv[argc], '.') || ft_strchr(argv[argc], '.'))
 			print_fun("Error floats", ERROR, NULL);
-		else if (ft_atoi(argv[argc] > INT_MAX) || ft_atoi(argv[argc] < INT_MIN))
-			print_fun("Error out of MAX MIN int range", ERROR, NULL);
-
+		//else if ((ft_atoi(argv[argc]) > (long long int)INT_MAX)) || (ft_atoi(argv[argc]) < (long long int)INT_MIN)
+			//print_fun("Error out of MAX MIN int range", ERROR, NULL);
 		else if (find_duplicate(ft_atoi(argv[argc]), argv))
 			print_fun("Error", ERROR, NULL);
 	}
