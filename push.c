@@ -5,16 +5,15 @@ int	main(int argc, char *argv[])
 {
 	int i;
 	t_list *current_a;
-	//t_list *tmp = NULL;
 
-
+	val_input( argc, argv);
 	t_list *ends[4];
 	if (argc < 2)
 		exit(1);
 	current_a = malloc(sizeof(t_list));
 	if (current_a == NULL)
 		exit(1);
-	current_a->x = atoi(argv[1]);
+	current_a->x = (int)atoi(argv[1]);
 	// this index goes as a counting check, not necessary
 	current_a->index = 1;
 	current_a->prev = NULL;

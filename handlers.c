@@ -70,10 +70,7 @@ void	rprint(t_list *tail)
 			break ;
 	}
 }
-/*if (!tail_a)
-			tail_a->prev = NULL;
-		if (!tail_b)
-			tail_b->prev = NULL;*/
+
 
 void	print_stack(t_list **ends)
 {
@@ -110,23 +107,4 @@ void	print_stack(t_list **ends)
 		}
 	}
 	printf("\t---------\nStack\tA\tB\n ");
-}
-
-void	testprint(t_list **ends)
-{
-	printf("\n print(ends[0]); \n");
-
-	print(ends[0]);
-	printf("\n");
-	printf("\n print(ends[2]); \n");
-
-	print(ends[2]);
-
-	printf("\n rprint(ends[0]); \n");
-
-	rprint(ends[1]);
-	printf("\n");
-	printf("\n rprint(ends[2]); \n");
-
-	rprint(ends[3]);
 }
