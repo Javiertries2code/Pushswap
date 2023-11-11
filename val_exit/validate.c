@@ -9,7 +9,7 @@ int	valid(const char *s, char **splitted, t_list **ends)
 	i = 0;                          // i can allways play the i = -1; ++i
 	while (*s == ' ' || *s == '\t') // it might eliminate a first -number
 		s++;
-	while (s[i])//i gonna try with a previous 
+	while (s[i]) // i gonna try with a previous
 	{
 		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '-' && i == 0))
 			i++;
@@ -44,21 +44,37 @@ void	val_split(char *argv, t_list **ends)
 	}
 	else
 	{
-		
 		if (valid(argv, NULL, ends) == SUCCESS)
 			new_element(ends, argv);
 		else
 			exiting("Non valid argv", NULL, ends);
 	}
+	find_duplicate(ends);
 }
 
-int	find_duplicate(long long int num, char **numbers)
+void	find_duplicate(t_list **ends)
 {
-	int	i;
+	t_list *head;
+	t_list *tail;
 
-	i = 1;
-	while (numbers[i])
-		if (ft_atoi(numbers[i++]) == num)
-			return (1);
-	return (0);
+	head = ends[0];
+	tail = ends[1];
+	while (head)
+	{
+		while (tail)
+		{
+			if (tail->x == head->x)
+				exiting("duplicate number", NULL, ends);
+			if (tail->prev)
+				tail = tail->prev;
+			else
+				break ;
+		}
+		if (head->next)
+		{
+			head = head->next;
+		}
+		else
+			break ;
+	}
 }

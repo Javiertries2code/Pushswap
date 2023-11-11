@@ -30,8 +30,8 @@ void				val_split(char *argv, t_list **ends);
 void				exiting(char *str, char **splitted, t_list **ends);
 int					valid(const char *s, char **splitted, t_list **ends);
 int					count_split(char **numbers);
-int					find_duplicate(long long int num, char **numbers);
 void				free_list(t_list **ends);
+void				find_duplicate(t_list **ends);
 
 // SUPPORT
 void				print(t_list *head);

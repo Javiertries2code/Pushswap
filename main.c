@@ -30,8 +30,8 @@ int	main(int argc, char *argv[])
 	while (++i< argc)
 		val_split(argv[i], ends);
 		
-	pb(ends, print_fun("pb"));
-	pb(ends, print_fun("pb"));
+	// pb(ends, print_fun("pb"));
+	// pb(ends, print_fun("pb"));
 	// sb(ends, print_fun("sb"));
 	// rrr(ends, print_fun("rrr"));
 	// ss(ends, tmp, 1, print_fun("ss"));
