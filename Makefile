@@ -28,7 +28,7 @@ UTILS := $(addprefix $(DIR_UTILS), $(UTILS_FILES))
 SUPPORT := $(addprefix $(DIR_SUPPORT),  $(SUPPORT_FILES))
 HANDLERS := $(addprefix $(DIR_HANDLERS), $(HANDLERS_FILES))
 HANDLERS := $(addprefix $(DIR_HANDLERS), $(HANDLERS_FILES))
-VALIDATES := $(addprefix $(DIR_VALIDATE ), $(VALIDATE_FILES ))
+VALIDATES := $(addprefix $(DIR_VALIDATE), $(VALIDATE_FILES))
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror

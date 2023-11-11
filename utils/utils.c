@@ -2,7 +2,7 @@
 
 
 
-long long int	ft_atoi(const char *str)
+long long int	ft_atoi(const char *str)//could cut come lines sending num as parameter
 {
 	int				sign;
 	long long int	num;
@@ -26,6 +26,8 @@ long long int	ft_atoi(const char *str)
 		i++;
 	}
 	num *= sign;
+	if(num > INT_MAX || num < INT_MIN)//I return Error, instead of calling exitin, i exit in the calling function
+		return(ERROR);
 	return (num);
 }
 

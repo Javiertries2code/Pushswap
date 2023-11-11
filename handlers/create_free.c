@@ -29,9 +29,8 @@ void	new_element(t_list **ends, char *x)
 	t_list *new;
 
 	new = calloc(1, sizeof(t_list));
-	if (new == NULL)
-		print_fun("failed to malloc for new element");
-		//exiting("failed to malloc for new list element", NULL, ends);
+	if (new == NULL || ft_atoi(x) == ERROR)
+		exiting("failed to malloc for new  element or x not INT", NULL, ends);
 
 	if (!ends[0])
 		{

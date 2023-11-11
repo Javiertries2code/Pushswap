@@ -1,6 +1,6 @@
 #include "../push.h"
 
-int	count_split(void **argv)
+int	count_split(char **argv)
 {
 	int	count;
 
@@ -28,7 +28,7 @@ void	exiting(char *str, char **splitted, t_list **ends)
     exit(1);
 }
 
-int	free_pointer(void **numbers)
+int	free_pointer(char **numbers)
 {
 	int	i;
 
