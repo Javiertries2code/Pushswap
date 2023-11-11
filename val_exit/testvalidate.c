@@ -1,14 +1,14 @@
 #include "../push.h"
 
-int	count_split(void **argv)
-{
-	int	count;
+// int	count_split(void **argv)
+// {
+// 	int	count;
 
-	count = 0;
-	while (argv[count] != NULL)
-		count++;
-	return (count);
-}
+// 	count = 0;
+// 	while (argv[count] != NULL)
+// 		count++;
+// 	return (count);
+// }
 /*Si no se especifican parámetros, el programa no deberá mostrar nada y deberá
 devolver el control al usuario.
 • En caso de error, deberá mostrar Error seguido de un “\n” en la salida de er-

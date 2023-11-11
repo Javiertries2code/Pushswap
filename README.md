@@ -1,5 +1,14 @@
 # Pushswap
 Test
+Thing working, i gotta organize the num validation, not repeating number, etc
+
+Have a look to create free, doesnt link to exiting() for some reason
+
+doesnt link with this one neither 
+throws this error continiously
+home/havr/Desktop/Push_swap/Push/main.c:31: undefined reference to `val_split'
+
+library seems to be fine, as make file is
 
 Organizing idea
 a**rgv -> send to validate as a doublepointer, cause Split will returna double pointer as well.

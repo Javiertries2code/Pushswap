@@ -1,29 +1,6 @@
 #include "../push.h"
 
-int	free_pointer(void **numbers)
-{
-	int	i;
 
-	i = count_split(numbers);
-	while (--i >= 0)
-		free(numbers[i]);
-	return (i);
-}
-// i could pass the count as an argument instead,
-// FUCK EFFICIENCY
-
-void	*print_fun(char *str, int num, void **numbers)
-{
-	if (num == ERROR)
-	{
-		write(1, "Error\n", 7);
-		exit(free_pointer(numbers) + 1);
-	}
-	write(1, str, num);
-	write(1, "\n", 1);
-	return ((void *)str);
-}
-//to fit thing i gotta return smthg,i can t return pointer to local variable, as it will be done and gone.
 
 long long int	ft_atoi(const char *str)
 {
@@ -53,9 +30,9 @@ long long int	ft_atoi(const char *str)
 }
 
 // para buscar coma o punto
-//int				i;
-//i = 0;
-//sobraba parece ser
+// int				i;
+// i = 0;
+// sobraba parece ser
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	len;
@@ -140,6 +117,8 @@ char	**ft_split(const char *s, char c)
 	ptr = (char **)ft_calloc(counter(s, c) + 1, sizeof(char *));
 	if (!ptr)
 		return (NULL);
+	while (*s == ' ' || *s == '\t')
+		s++;
 	i = 0;
 	j = 0;
 	while (s[j])

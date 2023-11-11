@@ -30,8 +30,9 @@ void	new_element(t_list **ends, char *x)
 
 	new = calloc(1, sizeof(t_list));
 	if (new == NULL)
-		exiting("failed to malloc for new element");
-			// Gotta do an exit function i see
+		print_fun("failed to malloc for new element");
+		//exiting("failed to malloc for new list element", NULL, ends);
+
 	if (!ends[0])
 		{
 	new->prev = NULL;

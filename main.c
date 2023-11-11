@@ -24,13 +24,16 @@ int	main(int argc, char *argv[])
 	ends[1] = NULL;
 	ends[2] = NULL;
 	ends[3] = NULL;
-	while (++i< argc)
-		new_element(ends, argv[i]);
+	// while (++i< argc)
+	// 	new_element(ends, argv[i]);
 	
-	pb(ends, print_fun("pb", 2, NULL));
-	sb(ends, print_fun("sb", 2, NULL));
-	rrr(ends, print_fun("rrr", 2, NULL));
-	ss(ends, tmp, 1, print_fun("ss", 2, NULL));
+	while (++i< argc)
+		val_split(argv[i], ends);
+		
+	pb(ends, print_fun("pb"));
+	sb(ends, print_fun("sb"));
+	rrr(ends, print_fun("rrr"));
+	ss(ends, tmp, 1, print_fun("ss"));
 
 	print_stack(ends);
 	free_ahead(ends[0]);
