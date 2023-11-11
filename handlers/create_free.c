@@ -24,17 +24,29 @@ void	free_ahead(t_list *head)
 	}
 }
 
-t_list	*new_element(t_list *current, int x, int index)
+void	new_element(t_list **ends, char *x)
 {
-	t_list	*new;
+	t_list *new;
 
-	new = malloc(sizeof(t_list));
+	new = calloc(1, sizeof(t_list));
 	if (new == NULL)
-		exit(1);
-	current->next = new;
-	new->prev = current;
-	new->x = x;
-	new->index = index;
+		exiting("failed to malloc for new element");
+			// Gotta do an exit function i see
+	if (!ends[0])
+		{
+	new->prev = NULL;
 	new->next = NULL;
-	return (new);
+	new->index = 1;
+	new->x = ft_atoi(x);
+	ends[0] = new;
+	ends[1] = new;
+		}
+		
+	else
+	{new->prev = ends[1];
+	ends[1]->next = new;
+	new->next = NULL;
+	new->index = ends[1]->index + 1;
+	new->x = ft_atoi(x);
+	ends[1] = new;}
 }

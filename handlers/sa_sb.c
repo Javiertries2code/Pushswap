@@ -1,10 +1,10 @@
 #include "../push.h"
 
-void	sa(t_list **ends, void *print)
+void	sa(t_list **ends, void *print_fun)
 {
 	t_list	*tmp;
 
-	if ( ends[1] == NULL || !ends[1]->prev|| !print)
+	if (ends[1] == NULL || !ends[1]->prev || !print_fun)
 		return ;
 	tmp = ends[1]->prev;
 	if (ends[1]->prev->prev)
@@ -18,7 +18,6 @@ void	sa(t_list **ends, void *print)
 	}
 	else if (ends[1]->prev && !ends[1]->prev->prev)
 	{
-	
 		ends[0] = ends[1];
 		ends[1] = tmp;
 		ends[0]->prev = NULL;
@@ -31,12 +30,9 @@ void	sa(t_list **ends, void *print)
 void	sb(t_list **ends, void *print)
 {
 	t_list	*tmp;
-printf("\naddress ends[3] sb  - %p\n", ends[3]);
+
 	if (ends[3] == NULL || !ends[3]->prev || !print)
-	{
-	
 		return ;
-	}
 	tmp = ends[3]->prev;
 	if (ends[3]->prev->prev)
 	{
@@ -49,7 +45,6 @@ printf("\naddress ends[3] sb  - %p\n", ends[3]);
 	}
 	else if (ends[3]->prev && !ends[3]->prev->prev)
 	{
-		
 		ends[2] = ends[3];
 		ends[3] = tmp;
 		ends[2]->prev = NULL;

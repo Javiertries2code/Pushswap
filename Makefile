@@ -1,8 +1,15 @@
-NAME := push_swap
+NAME := swap_push
 
 DIR_UTILS := utils/
 DIR_SUPPORT := support/
 DIR_HANDLERS := handlers/
+#-------------
+#-------------
+DIR_TEST := test/
+TEST_FILES := validate.c
+TESTS := $(addprefix $(DIR_TEST), $(TEST_FILES))
+#-------------
+#-------------
 
 UTILS_FILES = utils.c utils_support.c
 SUPPORT_FILES = support.c
@@ -12,17 +19,19 @@ HANDLERS_FILES = \
 
 OBJECTS = $(UTILS:.c=.o) $(SUPPORT:.c=.o) $(HANDLERS:.c=.o)
 
+
 UTILS := $(addprefix $(DIR_UTILS), $(UTILS_FILES))
 SUPPORT := $(addprefix $(DIR_SUPPORT),  $(SUPPORT_FILES))
 HANDLERS := $(addprefix $(DIR_HANDLERS), $(HANDLERS_FILES))
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
+LEAKS = -g
 
 all : $(NAME)
 
 $(NAME):$(OBJECTS)
-	$(CC) $(CFLAGS) -o $(NAME) main.c $(UTILS) $(HANDLERS) $(SUPPORT) 
+	$(CC) $(CFLAGS) $(LEAKS) -o $(NAME) main.c $(UTILS) $(HANDLERS) $(SUPPORT) $(TESTS)
 
 clean:
 	rm -rf  $(NAME) $(OBJECTS)
