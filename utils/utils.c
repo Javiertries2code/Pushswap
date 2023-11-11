@@ -21,8 +21,9 @@ void	*print_fun(char *str, int num, void **numbers)
 	}
 	write(1, str, num);
 	write(1, "\n", 1);
-	return (NULL);
+	return ((void *)str);
 }
+//to fit thing i gotta return smthg,i can t return pointer to local variable, as it will be done and gone.
 
 long long int	ft_atoi(const char *str)
 {
@@ -57,7 +58,6 @@ long long int	ft_atoi(const char *str)
 //sobraba parece ser
 char	*ft_strchr(const char *s, int c)
 {
-	
 	unsigned int	len;
 
 	len = ft_strlen(s);

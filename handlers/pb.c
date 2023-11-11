@@ -2,11 +2,11 @@
 
 //    t_list *ends[4] = {head_a, tail_a, head_b, tail_b};
 
-void pb(t_list **ends, void *print)
+void pb(t_list **ends, void *print_fun)
 {
     t_list *tmp;
 
-    if (ends[0] == NULL || ends[1] == NULL || !print)
+    if (ends[0] == NULL || ends[1] == NULL || !print_fun)
         return;
     tmp = ends[1];
 

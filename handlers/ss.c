@@ -1,13 +1,13 @@
 #include "../push.h"
 
-// if it doesnt fit by lines, i can be sent i and temp as a parameter. perfect fit
+// if it doesnt fit by lines, i=1 can be sent i and temp as a parameter. perfect fit
 //void	ss(t_list **ends);
-void	ss(t_list **ends, t_list *tmp, int i,  void *print)
+void	ss(t_list **ends, t_list *tmp, int i,  void *print_fun)
 {
 	//t_list *tmp;
 
 	//int i;
-	if (!ends[1] || !ends[3] || !ends[1]->prev || !ends[3]->prev || !print)
+	if (!ends[1] || !ends[3] || !ends[1]->prev || !ends[3]->prev || !print_fun)
 		return ;
 	//i = 1;
 	while (i != 5)
