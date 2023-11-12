@@ -5,18 +5,18 @@ int	valid(const char *s, char **splitted, t_list **ends)
 	int	i;
 
 	if (!s)
-		exiting("No string", splitted, ends);
-	i = 0;                          // i can allways play the i = -1; ++i
-	while (*s == ' ' || *s == '\t') // it might eliminate a first -number
+		exiting("Error", splitted, ends);
+	i = 0;
+	while (*s == ' ' || *s == '\t')
 		s++;
-	while (s[i]) // i gonna try with a previous
+	while (s[i])
 	{
-		if ((s[i] >= '0' && s[i] <= '9') || (s[i] == '-' && i == 0))
+		if (((s[i] >= '0' && s[i] <= '9') || (s[i] == '-' && i == 0)))
 			i++;
 		else if (s[i] == ' ' || s[i] == '\t')
 			return (SPLIT);
 		else
-			exiting("Non valid characters in str", splitted, ends);
+			exiting("Error", splitted, ends);
 	}
 	return (SUCCESS);
 }
@@ -37,7 +37,7 @@ void	val_split(char *argv, t_list **ends)
 			if (valid(tmp[i], tmp, ends) == SUCCESS)
 				new_element(ends, tmp[i]);
 			else // no need, its gonna exit in the function
-				exiting("Non valid, after splitting", tmp, ends);
+				exiting("Error", tmp, ends);
 			i++;
 		}
 		free_pointer(tmp);
@@ -47,9 +47,8 @@ void	val_split(char *argv, t_list **ends)
 		if (valid(argv, NULL, ends) == SUCCESS)
 			new_element(ends, argv);
 		else
-			exiting("Non valid argv", NULL, ends);
+			exiting("Error", NULL, ends);
 	}
-	find_duplicate(ends);
 }
 
 void	find_duplicate(t_list **ends)
@@ -63,12 +62,15 @@ void	find_duplicate(t_list **ends)
 	{
 		while (tail)
 		{
-			if (tail->x == head->x)
-				exiting("duplicate number", NULL, ends);
+			if (tail->x == head->x && head != tail)
+				exiting("Error\n", NULL, ends);
 			if (tail->prev)
 				tail = tail->prev;
 			else
+			{
+				tail = ends[1];
 				break ;
+			}
 		}
 		if (head->next)
 		{

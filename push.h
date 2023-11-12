@@ -25,6 +25,7 @@ enum				Calls
 
 };
 
+
 // VALIDATE
 void				val_split(char *argv, t_list **ends);
 void				exiting(char *str, char **splitted, t_list **ends);
@@ -68,7 +69,6 @@ size_t				ft_strlen(const char *s);
 void				*ft_calloc(size_t count, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				ft_bzero(void *s, size_t n);
-// find_duplicate(long long int num, char **numbers);
-// void 		ss(t_list **ends);
+
 
 #endif

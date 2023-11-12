@@ -24,17 +24,14 @@ int	main(int argc, char *argv[])
 	ends[1] = NULL;
 	ends[2] = NULL;
 	ends[3] = NULL;
-	// while (++i< argc)
-	// 	new_element(ends, argv[i]);
 	
 	while (++i< argc)
 		val_split(argv[i], ends);
-		
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
-	// sb(ends, print_fun("sb"));
-	// rrr(ends, print_fun("rrr"));
-	// ss(ends, tmp, 1, print_fun("ss"));
+	find_duplicate(ends);
+
+
+	
+	
 
 	print_stack(ends);
 	free_ahead(ends[0]);

@@ -18,14 +18,18 @@ int	count_split(char **argv)
 
 void	exiting(char *str, char **splitted, t_list **ends)
 {
-	write(1, "Error\n", 6);
 	if (str)
+	{
 		write(1, str, ft_strlen(str));
+		write(1, "\n", 1);
+	}
+	else
+		write(1, "Error\n", 7);
 	if (splitted)
 		free_pointer(splitted);
-    if (ends)
-        free_list(ends);
-    exit(1);
+	if (ends)
+		free_list(ends);
+	exit(1);
 }
 
 int	free_pointer(char **numbers)
@@ -57,19 +61,19 @@ void	free_list(t_list **ends)
 		free(ends[3]);
 		ends[3] = tmp;
 	}
-    	/*while (ends[0])
-	{
-		tmp = ends[0]->next;
-		free(ends[0]);
-		ends[0] = tmp;
-	}
-       	while (ends[2])
-	{
-		tmp = ends[2]->next;
-		free(ends[2]);
-		ends[2] = tmp;
-	}*/
-    //REDUNDANT< JUST IN CASE
+	/*while (ends[0])
+{
+	tmp = ends[0]->next;
+	free(ends[0]);
+	ends[0] = tmp;
+}
+	while (ends[2])
+{
+	tmp = ends[2]->next;
+	free(ends[2]);
+	ends[2] = tmp;
+}*/
+	// REDUNDANT< JUST IN CASE
 }
 /*void	free_backwards(t_list *tail)
 {
