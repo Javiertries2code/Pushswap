@@ -1,13 +1,13 @@
 #include "../push.h"
 
-
 void	print(t_list *head)
 {
 	while (head)
 	{
-		printf("FORWARD\nvalue\t%d\tindex\t%d\n ", head->x, head->index);
-		printf("Address - %p\tPREV - %p\t NEXT - %p \n", head, head->prev,
-			head->next);
+		printf("\nFORWARD\nvalue\t%d\tindex\t%d\t%c\n ", head->x, head->index, head->stack);
+		// printf("Address - %p\tPREV - %p\t NEXT - %p \n", head, head->prev,
+		// 	head->next);
+		printf("\nbigger\t%d\tsmaller\t%d\n ", head->bigger, head->smaller);
 		if (head->next)
 			head = head->next;
 		else
@@ -19,16 +19,16 @@ void	rprint(t_list *tail)
 {
 	while (tail)
 	{
-		printf("BACKWARDS\nvalue\t%d\tindex\t%d\n ", tail->x, tail->index);
-		printf("Address - %p\tNEXT - %p\t PREV - %p \n", tail, tail->next,
-			tail->prev);
+		printf("\nBackwards\nvalue\t%d\tindex\t%d\t%c\n ", tail->x, tail->index, tail->stack);
+		// printf("Address - %p\tPREV - %p\t NEXT - %p \n", head, head->prev,
+		// 	head->next);
+		printf("\nbigger\t%d\tsmaller\t%d\n ", tail->bigger, tail->smaller);
 		if (tail->prev)
 			tail = tail->prev;
 		else
 			break ;
 	}
 }
-
 
 void	print_stack(t_list **ends)
 {
@@ -42,11 +42,12 @@ void	print_stack(t_list **ends)
 	while (tail_a || tail_b)
 	{
 		if (tail_a && tail_b)
-			printf("\n\t%d\t%d\n ", tail_a->x, tail_b->x);
+			printf("\n\tind -%d\t\t%d\t%d\tind -%d\n ", tail_a->index,
+				tail_a->x, tail_b->x, tail_b->index);
 		else if (tail_a && !tail_b)
-			printf("\n\t%d\t-\n ", tail_a->x);
+			printf("\n\tind -%d\t\t%d\t-\n ", tail_a->index, tail_a->x);
 		else if (!tail_a && tail_b)
-			printf("\n\t-\t%d\n ", tail_b->x);
+			printf("\n\t\t\t-\t%d\tind -%d\n ", tail_b->x, tail_b->index);
 		else
 			return ;
 		if (tail_a)
@@ -64,14 +65,13 @@ void	print_stack(t_list **ends)
 				tail_b = NULL;
 		}
 	}
-	printf("\t---------\nStack\tA\tB\n ");
+	printf("\t-----------------------------\nStack\t\t\tA\tB\n ");
 }
-
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	i;
-	char			*str;
+	unsigned int i;
+	char *str;
 
 	str = (char *)s;
 	i = 0;

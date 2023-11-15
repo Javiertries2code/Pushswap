@@ -12,6 +12,14 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
+	char			stack;
+	int 			stack_size;
+	int				is_pv;
+	int				smaller;
+	int				bigger;
+	int 			smaller_stack;
+	int 			bigger_stack;
+
 }					t_list;
 
 enum				Calls
@@ -22,9 +30,23 @@ enum				Calls
 	TMP = 3,
 	ND_EVAL = 2,
 	ST_EVAL = 1,
-
+	INITIAL_SET = 1,
+	STACK_SET = 0,
 };
+//init
+void count_set(t_list **ends, int init_stack);
+void	set_element_stack(t_list *tail, t_list *head, int init_stack, char stack);
+void	set_stack(t_list *head, t_list *tail, int init_stack, char stack);
 
+
+
+
+// SORTING
+void				sorting_three(t_list **ends);
+void				sorting(t_list **ends);
+void				test_sort(t_list **ends, t_list *tmp);
+// init
+void				init(t_list **ends, t_list **data, t_list *tmp);
 
 // VALIDATE
 void				val_split(char *argv, t_list **ends);
@@ -41,6 +63,7 @@ void				testprint(t_list **ends);
 void				print_stack(t_list **ends);
 
 // CREATE DESTROY
+void				set_element(t_list *tail, t_list *head);
 void				new_element(t_list **ends, char *x);
 void				free_ahead(t_list *tail);
 void				free_forward(t_list *head);
@@ -69,6 +92,5 @@ size_t				ft_strlen(const char *s);
 void				*ft_calloc(size_t count, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				ft_bzero(void *s, size_t n);
-
 
 #endif

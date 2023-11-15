@@ -1,5 +1,14 @@
 #include "../push.h"
 
+void set_element(t_list *tail, t_list *head)
+{
+	if(tail->x > head->x)
+		tail->smaller++;
+	if(tail->x < head->x) //not else cuuse the == would fuck up
+		tail->bigger++;
+}
+
+
 int	valid(const char *s, char **splitted, t_list **ends)
 {
 	int	i;
@@ -62,6 +71,7 @@ void	find_duplicate(t_list **ends)
 	{
 		while (tail)
 		{
+			set_element(tail, head);
 			if (tail->x == head->x && head != tail)
 				exiting("Error\n", NULL, ends);
 			if (tail->prev)
@@ -73,9 +83,7 @@ void	find_duplicate(t_list **ends)
 			}
 		}
 		if (head->next)
-		{
 			head = head->next;
-		}
 		else
 			break ;
 	}

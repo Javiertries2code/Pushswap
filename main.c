@@ -15,25 +15,36 @@ int	main(int argc, char *argv[])
 	tmp = ft_calloc(1, sizeof(t_list));
 	if (!tmp)
 		exit(1);
-	//to save one line of needed
+	// to save one line of needed
 	// 	i = -1;
 	// while(++i < 4)
 	// 	ends[i] = NULL;
-
 	ends[0] = NULL;
 	ends[1] = NULL;
 	ends[2] = NULL;
 	ends[3] = NULL;
-	
-	while (++i< argc)
+
+	while (++i < argc)
 		val_split(argv[i], ends);
 	find_duplicate(ends);
+	//-----------
+	count_set(ends, INITIAL_SET);
 
-
+	// pb(ends, print_fun("pb"));
+	// pb(ends, print_fun("pb"));
+	// pb(ends, print_fun("pb"));
 	
-	
+	// count_set(ends, STACK_SET);
+	// print_stack(ends);
 
+	// sorting(ends);
 	print_stack(ends);
+
+	//---------
+
+	rprint(ends[1]);
+	rprint(ends[3]);
+	//----------------
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
 	free(tmp);
