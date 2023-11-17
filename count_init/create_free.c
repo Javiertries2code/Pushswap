@@ -53,7 +53,7 @@ void	new_element(t_list **ends, char *x)
 	}
 	new->x = ft_atoi(x);
 	ends[0] = new;
-	ends[0]->stack = 'a';
+	ends[0]->stack = 'A';
 	ends[0]->is_pv = 0;
 	ends[0]->smaller = 0;
 	ends[0]->bigger = 0;

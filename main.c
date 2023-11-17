@@ -11,14 +11,11 @@ int	main(int argc, char *argv[])
 	if (argc < 2)
 		exit(1);
 
-	// tmp = ft_calloc(4, sizeof(t_list));
+	
 	tmp = ft_calloc(1, sizeof(t_list));
 	if (!tmp)
 		exit(1);
-	// to save one line of needed
-	// 	i = -1;
-	// while(++i < 4)
-	// 	ends[i] = NULL;
+
 	ends[0] = NULL;
 	ends[1] = NULL;
 	ends[2] = NULL;
@@ -28,13 +25,18 @@ int	main(int argc, char *argv[])
 		val_split(argv[i], ends);
 	find_duplicate(ends);
 	//-----------
-	count_set(ends, INITIAL_SET);
-
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
 	
-	// count_set(ends, STACK_SET);
+	//count_set(ends, INITIAL_SET);
+
+	pb(ends, print_fun("pb"));
+	pb(ends, print_fun("pb"));
+	pb(ends, print_fun("pb"));
+	
+	sb(ends, print_fun("sb"));
+	rr(ends, print_fun("rr"));
+	sa(ends, print_fun("sa"));
+	
+	count_set(ends);
 	// print_stack(ends);
 
 	// sorting(ends);

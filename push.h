@@ -30,13 +30,15 @@ enum				Calls
 	TMP = 3,
 	ND_EVAL = 2,
 	ST_EVAL = 1,
-	INITIAL_SET = 1,
-	STACK_SET = 0,
 };
 //init
-void count_set(t_list **ends, int init_stack);
-void	set_element_stack(t_list *tail, t_list *head, int init_stack, char stack);
-void	set_stack(t_list *head, t_list *tail, int init_stack, char stack);
+void	count_set(t_list **ends);
+void	set_element_stack(t_list *tail, t_list *head);
+void	set_stack(t_list *head, t_list *tail, char stack);
+void 	reset_stack(t_list *head, char stack);
+void	count_index(t_list *head);
+
+
 
 
 

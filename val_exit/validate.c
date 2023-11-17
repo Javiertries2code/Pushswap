@@ -4,7 +4,7 @@ void set_element(t_list *tail, t_list *head)
 {
 	if(tail->x > head->x)
 		tail->smaller++;
-	if(tail->x < head->x) //not else cuuse the == would fuck up
+	if(tail->x < head->x)
 		tail->bigger++;
 }
 
@@ -88,3 +88,4 @@ void	find_duplicate(t_list **ends)
 			break ;
 	}
 }
+
