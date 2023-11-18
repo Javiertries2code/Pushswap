@@ -3,7 +3,7 @@
 void set_element(t_list *tail, t_list *head)
 {
 	if(tail->x > head->x)
-		tail->smaller++;
+		tail->smaller--;
 	if(tail->x < head->x)
 		tail->bigger++;
 }
@@ -30,7 +30,7 @@ int	valid(const char *s, char **splitted, t_list **ends)
 	return (SUCCESS);
 }
 
-void	val_split(char *argv, t_list **ends)
+void	val_split(char *argv, t_list **ends, t_data **datarr)
 {
 	int		i;
 	char	**tmp;
@@ -44,7 +44,7 @@ void	val_split(char *argv, t_list **ends)
 		while (i < j)
 		{
 			if (valid(tmp[i], tmp, ends) == SUCCESS)
-				new_element(ends, tmp[i]);
+				new_element(ends, tmp[i], datarr);
 			else // no need, its gonna exit in the function
 				exiting("Error", tmp, ends);
 			i++;
@@ -54,16 +54,16 @@ void	val_split(char *argv, t_list **ends)
 	else
 	{
 		if (valid(argv, NULL, ends) == SUCCESS)
-			new_element(ends, argv);
+			new_element(ends, argv, datarr);
 		else
 			exiting("Error", NULL, ends);
 	}
 }
 
-void	find_duplicate(t_list **ends)
+void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 {
-	t_list *head;
-	t_list *tail;
+	// t_list *head; // NULLs could be passed,as parameters savinfg lines
+	// t_list *tail;
 
 	head = ends[0];
 	tail = ends[1];
@@ -71,7 +71,7 @@ void	find_duplicate(t_list **ends)
 	{
 		while (tail)
 		{
-			set_element(tail, head);
+			//set_element(tail, head);//could be eliminated
 			if (tail->x == head->x && head != tail)
 				exiting("Error\n", NULL, ends);
 			if (tail->prev)

@@ -16,7 +16,7 @@ TESTS := $(addprefix $(DIR_TEST), $(TEST_FILES))
 #-------------
 #-------------
 CREATE_INIT_FILES = create_free.c count_init.c
-SORTING_FILES = sorting.c
+SORTING_FILES = sorting.c quicksort.c
 VALIDATE_FILES = validate.c exiting.c
 UTILS_FILES = utils.c utils_support.c
 SUPPORT_FILES = support.c

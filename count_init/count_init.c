@@ -3,6 +3,7 @@
 void	set_element_stack(t_list *tail, t_list *head);
 void	set_stack(t_list *head, t_list *tail, char stack);
 void	count_index(t_list *head);
+
 void	reset_stack(t_list *head, char stack)
 {
 	while (head)
@@ -32,6 +33,7 @@ void	count_set(t_list **ends)
 		set_stack(ends[2], ends[3], 'B');
 		count_index(ends[2]);
 	}
+	find_pv(ends, NULL);
 }
 
 void	set_stack(t_list *head, t_list *tail, char stack)

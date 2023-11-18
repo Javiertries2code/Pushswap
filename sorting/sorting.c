@@ -6,16 +6,18 @@
 }*/
 void	sorting(t_list **ends)
 {
-	if (ends[0]->index < 2)
+	count_set(ends);
+	//find_pv(ends, NULL); a'ready in count set
+	if (ends[1]->index < 2)
 		return ;
-	else if (ends[0]->index == 2 && ends[0]->x > ends[1]->x)
+	else if (ends[1]->index == 2 && ends[0]->x > ends[1]->x)
 		sa(ends, print_fun("sa"));
 	else if (ends[0]->index == 2 && ends[0]->x < ends[1]->x)
 		return ; // or the other way around
-	else if (ends[0]->index == 3)
+	else if (ends[1]->index == 3)
 		sorting_three(ends);
-	// else if (ends[0]->index <= 5)
-	// sorting_five(ends);
+	else if (ends[1]->index <= 5)
+		sorting_five(ends, ends[0]->data_A->pv); //trying to save lines
 	// else
 	// 	sort_bulk(ends);
 }
