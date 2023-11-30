@@ -8,7 +8,8 @@
         "string_view": "c",
         "initializer_list": "c",
         "ostream": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "algorithm": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

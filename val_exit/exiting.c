@@ -16,6 +16,14 @@ int	count_split(char **argv)
 // to fit thing i gotta return smthg,i can t return pointer to local variable,
 // as it will be done and gone.
 
+
+/**
+ * @brief 
+ * @file exiting.c
+ * @param str 
+ * @param splitted 
+ * @param ends 
+ */
 void	exiting(char *str, char **splitted, t_list **ends)
 {
 	if (str)
@@ -32,6 +40,12 @@ void	exiting(char *str, char **splitted, t_list **ends)
 	exit(1);
 }
 
+/**
+ * @brief freeing the set of numbers
+ * 
+ * @param numbers 
+ * @return int 
+ */
 int	free_pointer(char **numbers)
 {
 	int	i;

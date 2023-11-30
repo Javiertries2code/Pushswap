@@ -1,5 +1,12 @@
 #include "../push.h"
-
+/**
+ * @brief Calculates how many elements of the list are higher and smalles, setting those counters. So to know deviation over 
+ * the middle number, 1/2 +-1
+ * It could be deleted, but i am not sure
+ * 
+ * @param tail last element of one stack. Top
+ * @param head first element of one stack. Base
+ */
 void set_element(t_list *tail, t_list *head)
 {
 	if(tail->x > head->x)
@@ -8,7 +15,18 @@ void set_element(t_list *tail, t_list *head)
 		tail->bigger++;
 }
 
-
+/**
+ * @brief Trims and evaluates if the string holds any non valid character, or sparating character and splitting
+ * is needed.
+ * @file validate.c
+ * @param s 
+ * @param splitted Comes val_eplit to be able to redirect to exit and free it in case of error
+ * @param ends t_list *ends[]- holds head pointers to head and tail of stack a and stack b
+ * @return  SPLIT - SUCESS  or call to Error.
+ * @see val_split
+ * @see exiting
+ * 
+ */
 int	valid(const char *s, char **splitted, t_list **ends)
 {
 	int	i;
@@ -30,6 +48,19 @@ int	valid(const char *s, char **splitted, t_list **ends)
 	return (SUCCESS);
 }
 
+/**
+ * @brief  make the vaidations and splits  the argv is necessary, then it creates a new list element
+ * or exits if Error. It 
+ * 
+ * @param argv it gets from the main function the argv's one by one 
+ * @param ends t_list *ends[]- holds head pointers to head and tail of stack a and stack b
+ * @param datarr struct holding usefull data from the tlist so to be vailale for every element
+ * @see valid
+ * @see count_split
+ * @see new_element
+ * @see exiting
+ * 
+ */
 void	val_split(char *argv, t_list **ends, t_data **datarr)
 {
 	int		i;
@@ -60,6 +91,13 @@ void	val_split(char *argv, t_list **ends, t_data **datarr)
 	}
 }
 
+/**
+ * @brief After the list is already created, it search for duplicates throwing error
+ * 
+ * @param ends array with heads and tails of stacks A and B
+ * @param tail last element of one stack. Top
+ * @param head first element of one stack. Base
+ */
 void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 {
 	// t_list *head; // NULLs could be passed,as parameters savinfg lines

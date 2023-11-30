@@ -27,6 +27,7 @@ typedef struct s_list
 typedef struct s_data
 {
 	int				pv;
+	int				index_pv;
 	int				head_value;
 	int				tail_value;
 
@@ -50,7 +51,7 @@ void				count_index(t_list *head);
 
 // SORTING
 
-void				sorting_five(t_list **ends, int pv);
+void	sorting_five(t_list **ends, int pv) ;
 void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);

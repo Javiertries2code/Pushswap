@@ -1,6 +1,14 @@
 
 #include "push.h"
-
+/**
+ * @brief Creating begining and ends of list, sama as dataarr that will store
+ * necessary info in an struct inside the t_list struct.
+ * tmp is not clear why i used it for, will chaeck later
+ * @file main.c
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int	main(int argc, char *argv[])
 {
 	int i;

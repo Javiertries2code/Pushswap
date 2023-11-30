@@ -1,0 +1,52 @@
+\hypertarget{exiting_8c}{}\doxysection{val\+\_\+exit/exiting.c File Reference}
+\label{exiting_8c}\index{val\_exit/exiting.c@{val\_exit/exiting.c}}
+{\ttfamily \#include \char`\"{}../push.\+h\char`\"{}}\newline
+Include dependency graph for exiting.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{exiting_8c_af6c659b442157ce564150b3b2da1705d}\label{exiting_8c_af6c659b442157ce564150b3b2da1705d}} 
+int {\bfseries count\+\_\+split} (char $\ast$$\ast$argv)
+\item 
+\mbox{\Hypertarget{exiting_8c_aa05258f6cd523bbbb90a1eca027f5f0f}\label{exiting_8c_aa05258f6cd523bbbb90a1eca027f5f0f}} 
+void {\bfseries exiting} (char $\ast$str, char $\ast$$\ast$splitted, \mbox{\hyperlink{structs__list}{t\+\_\+list}} $\ast$$\ast$ends)
+\item 
+int \mbox{\hyperlink{exiting_8c_a7704cf4050452e32d47717651e0b64ea}{free\+\_\+pointer}} (char $\ast$$\ast$numbers)
+\begin{DoxyCompactList}\small\item\em freeing the set of numbers \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{exiting_8c_a398408680ba9fd34cc1230b1b6d24686}\label{exiting_8c_a398408680ba9fd34cc1230b1b6d24686}} 
+void {\bfseries free\+\_\+list} (\mbox{\hyperlink{structs__list}{t\+\_\+list}} $\ast$$\ast$ends)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & \\
+\hline
+{\em splitted} & \\
+\hline
+{\em ends} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{exiting_8c_a7704cf4050452e32d47717651e0b64ea}\label{exiting_8c_a7704cf4050452e32d47717651e0b64ea}} 
+\index{exiting.c@{exiting.c}!free\_pointer@{free\_pointer}}
+\index{free\_pointer@{free\_pointer}!exiting.c@{exiting.c}}
+\doxysubsubsection{\texorpdfstring{free\_pointer()}{free\_pointer()}}
+{\footnotesize\ttfamily int free\+\_\+pointer (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{numbers }\end{DoxyParamCaption})}
+
+
+
+freeing the set of numbers 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numbers} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}

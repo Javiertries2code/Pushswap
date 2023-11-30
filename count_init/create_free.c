@@ -24,7 +24,13 @@ void	free_ahead(t_list *head)
 	}
 }
 
-
+/**
+ * @brief 
+ * 
+ * @param ends 
+ * @param x 
+ * @param datarr 
+ */
 void	new_element(t_list **ends, char *x, t_data **datarr)
 {
 	t_list	*new;
