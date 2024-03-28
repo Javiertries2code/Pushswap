@@ -9,6 +9,9 @@
 typedef struct s_list
 {
 	int				x;
+	int 			xmap;
+	long long int	xbin;
+	
 	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -30,6 +33,10 @@ typedef struct s_data
 	int				index_pv;
 	int				head_value;
 	int				tail_value;
+	int				stack_min;
+	int				stack_max;
+
+	int				map_index;
 
 }					t_data;
 
@@ -42,6 +49,15 @@ enum				Calls
 	ND_EVAL = 2,
 	ST_EVAL = 1,
 };
+//mapping
+void				map_list(t_list **ends, t_list *head);
+void				find_min_abs(t_list *head);
+void				assign_index(t_list **ends);
+void				find_min_rel(t_list *head);
+void				find_max(t_list *head);
+void				to_binary(t_list *head);
+int					convert_binary(int ch);
+
 // init
 void				count_set(t_list **ends);
 void				set_element_stack(t_list *tail, t_list *head);
@@ -51,7 +67,7 @@ void				count_index(t_list *head);
 
 // SORTING
 
-void	sorting_five(t_list **ends, int pv) ;
+void				sorting_five(t_list **ends, int pv) ;
 void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);
@@ -59,6 +75,7 @@ void				find_pv(t_list **ends, t_list *head);
 
 // init
 void				init(t_list **ends, t_list **data, t_list *tmp);
+// void				map_list(t_list **ends, t_list *head, t_list *tail){
 
 // VALIDATE
 void				val_split(char *argv, t_list **ends, t_data **datarr);

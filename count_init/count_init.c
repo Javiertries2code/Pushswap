@@ -96,6 +96,8 @@ void	count_index(t_list *head)
 			break ;
 	}
 }
+	
+
 
 // void	count_index(t_list **ends)
 // {

@@ -45,7 +45,7 @@ void	print_stack(t_list **ends)
 			printf("\n\tind -%d\t\t%d\t%d\tind -%d\n ", tail_a->index,
 				tail_a->x, tail_b->x, tail_b->index);
 		else if (tail_a && !tail_b)
-			printf("\n\tind -%d\t\t%d\t-\n ", tail_a->index, tail_a->x);
+			printf("\n\tind -%d\t\t%d\t-\n\txmap - %d\n%lld", tail_a->index, tail_a->x, tail_a->xmap, tail_a->xbin);
 		else if (!tail_a && tail_b)
 			printf("\n\t\t\t-\t%d\tind -%d\n ", tail_b->x, tail_b->index);
 		else

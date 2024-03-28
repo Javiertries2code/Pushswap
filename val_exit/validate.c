@@ -102,14 +102,13 @@ void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 {
 	// t_list *head; // NULLs could be passed,as parameters savinfg lines
 	// t_list *tail;
-
+//i guess i could cut lines by delivering ends[0] in the param
 	head = ends[0];
 	tail = ends[1];
 	while (head)
 	{
 		while (tail)
 		{
-			//set_element(tail, head);//could be eliminated
 			if (tail->x == head->x && head != tail)
 				exiting("Error\n", NULL, ends);
 			if (tail->prev)

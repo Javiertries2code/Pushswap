@@ -39,32 +39,12 @@ int	main(int argc, char *argv[])
 		val_split(argv[i], ends, datarr);
 		//PASSING NULLS TO SAVE LINES IN duplicate
 	find_duplicate(ends, NULL, NULL);
-	
+	map_list(ends, ends[0]);
 
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
+
 	
-	// pb(ends, print_fun("pb"));
-	// pb(ends, print_fun("pb"));
-	// count_set(ends);
-	// find_pv(ends, NULL);
-	// if (ends[0] && ends[0]->data_A->pv)
-	// 	printf("\npv A- %d", ends[0]->data_A->pv);
-	// if (ends[2] && ends[2]->data_B->pv)
-	 print_stack(ends);// 	printf("\n\npv B -%d",  ends[2]->data_B->pv );
-	
-	sorting(ends);
 	 print_stack(ends);
 
-	// sorting(ends);
-	//print_stack(ends);
-
-	//---------
-
-	//rprint(ends[1]);
-	//rprint(ends[3]);
-	//----------------
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
 	free(tmp);

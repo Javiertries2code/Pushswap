@@ -11,6 +11,7 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
+
 size_t	ft_strlen(const char *s)
 {
 	unsigned int	i;
