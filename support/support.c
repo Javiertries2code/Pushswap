@@ -42,12 +42,12 @@ void	print_stack(t_list **ends)
 	while (tail_a || tail_b)
 	{
 		if (tail_a && tail_b)
-			printf("\n\tind -%d\t\t%d\t%d\tind -%d\n ", tail_a->index,
+			printf("\n\tind -%d\t\t%d\t\t\t%d\tind -%d\n ", tail_a->index,
 				tail_a->x, tail_b->x, tail_b->index);
 		else if (tail_a && !tail_b)
-			printf("\n\t\t\t%d\t-\n\txmap - %d\n%lld",  tail_a->x, tail_a->xmap, tail_a->xbin);
+			printf("\n\t\t\t%d\t\t\t-\n\tmapeado - %d\n",  tail_a->x, tail_a->xmap);
 		else if (!tail_a && tail_b)
-			printf("\n\t\t\t-\t%d\tind -%d\n ", tail_b->x, tail_b->index);
+			printf("\n\t\t\t-\t\t\t%d\tind -%d\n ", tail_b->x, tail_b->index);
 		else
 			return ;
 		if (tail_a)
@@ -65,7 +65,7 @@ void	print_stack(t_list **ends)
 				tail_b = NULL;
 		}
 	}
-	printf("\t-----------------------------\nStack\t\t\tA\tB\n ");
+	printf("\t-------------------------------------------\nStack\t\t\tA\t\t\tB\n ");
 }
 
 void	ft_bzero(void *s, size_t n)
@@ -77,16 +77,4 @@ void	ft_bzero(void *s, size_t n)
 	i = 0;
 	while (i < n)
 		str[i++] = '\0';
-}
-
-void print_radix( t_list **ends, t_list *tail, int decimal)
-{
-
- printf("\ntail->x = %d", tail->x );
-printf("\nends[1]->x = %d", ends[1]->x );
-usleep(400);
-printf("\ntail->xmap = %d", tail->xmap );
-printf("\ntail->xbin = %lld", tail->xbin );
-printf("\ntail->xbin/decimal = %lld", tail->xbin % decimal );
-//printf("\ntail->data_A->stack_size = %d", tail->data_A->stack_size);
 }

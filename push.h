@@ -94,7 +94,6 @@ void				print(t_list *head);
 void				rprint(t_list *tail);
 void				testprint(t_list **ends);
 void				print_stack(t_list **ends);
-void print_radix( t_list **ends, t_list *tail, int decimal);
 
 
 // CREATE DESTROY
@@ -129,5 +128,6 @@ size_t				ft_strlen(const char *s);
 void				*ft_calloc(size_t count, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void				ft_bzero(void *s, size_t n);
+size_t				counter(const char *s, char c);
 
 #endif

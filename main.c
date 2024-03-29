@@ -17,10 +17,9 @@ int	main(int argc, char *argv[])
 	t_data *datarr[2];
 	i = 0;
 
-	if (argc < 2)
-		exit(1);
-
-	
+	if (argc < 2 || (argc == 2 && counter(argv[1], ' ') == 1 ))
+		exiting(NULL, NULL, NULL);
+		
 	tmp = ft_calloc(1, sizeof(t_list));
 	if (!tmp)
 		exit(1);
@@ -37,15 +36,13 @@ int	main(int argc, char *argv[])
 		val_split(argv[i], ends, datarr);
 		//PASSING NULLS TO SAVE LINES IN duplicate
 	find_duplicate(ends, NULL, NULL);
-	map_list(ends, ends[0]);
-
-
-	radix(ends, 0);
 	//print_stack(ends);
-	
+
+	map_list(ends, ends[0]);
+	radix(ends, 0);
+
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
 	free(tmp);
-
 	return (0);
 }

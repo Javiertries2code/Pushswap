@@ -25,8 +25,10 @@ int	count_split(char **argv)
  * @param ends 
  */
 void	exiting(char *str, char **splitted, t_list **ends)
-{	if(str[0] == 'Y' && (int)str[1] == 'W')
-		ends[0]->data_B->stack_size = 0;//to avoid error printing
+{	//in case of crashing is causo
+	if(str && str[0] == 'Y' && (int)str[1] == 'W')
+		{free_list(ends);
+		exit(1);}
 	else if (str)
 	{
 		write(1, str, ft_strlen(str));
@@ -76,40 +78,4 @@ void	free_list(t_list **ends)
 		free(ends[3]);
 		ends[3] = tmp;
 	}
-	/*while (ends[0])
-{
-	tmp = ends[0]->next;
-	free(ends[0]);
-	ends[0] = tmp;
 }
-	while (ends[2])
-{
-	tmp = ends[2]->next;
-	free(ends[2]);
-	ends[2] = tmp;
-}*/
-	// REDUNDANT< JUST IN CASE
-}
-/*void	free_backwards(t_list *tail)
-{
-	t_list	*tmp;
-
-	while (tail)
-	{
-		tmp = tail->prev;
-		free(tail);
-		tail = tmp;
-	}
-}
-
-void	free_ahead(t_list *head)
-{
-	t_list	*tmp;
-
-	while (head)
-	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
-	}
-}*/

@@ -1,4 +1,4 @@
-NAME := swap_push
+NAME := push_swap
 
 DIR_UTILS := utils/
 DIR_SUPPORT := support/
@@ -43,6 +43,7 @@ MAPPINGS := $(addprefix $(DIR_MAPPING), $(MAPPING_FILES))
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 LEAKS = -g
+
 
 all : $(NAME)
 

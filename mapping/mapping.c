@@ -17,7 +17,7 @@ void map_list(t_list **ends, t_list *head)
         find_min_rel(ends[0]);
         num_elements--;
     }
-   to_binary(head);
+  // to_binary(head);
 }
 void find_max(t_list *head)
 {
@@ -35,7 +35,7 @@ void find_max(t_list *head)
     }
 
     head->data_A->stack_max = max;
-    //printf("\nmax = %d", head->data_A->stack_max);
+   
   
 }
 void find_min_rel(t_list *head)
@@ -55,13 +55,10 @@ void find_min_rel(t_list *head)
             break;
     }
     head->data_A->stack_min = min;
-   // head->data_A->map_index++;
-   //index++ done in assigned
-     //printf("\nmin-rel = %d", head->data_A->stack_min);
+
         
 
 }
-
 void find_min_abs(t_list *head)
 {
 
@@ -80,11 +77,7 @@ void find_min_abs(t_list *head)
 
     head->data_A->stack_min = min;
     head->data_A->map_index = 1;
-    printf("\nmin = %d", head->data_A->stack_min);
-
 }
-
-// asssigs and map index value to the element == to minrel
 void assign_index(t_list **ends)
 {
     //write(1, "assign_index", 13);

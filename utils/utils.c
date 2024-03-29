@@ -72,7 +72,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (ncopied);
 }
 
-static size_t	counter(const char *s, char c)
+ size_t	counter(const char *s, char c)
 {
 	size_t	counter;
 	size_t	i;
