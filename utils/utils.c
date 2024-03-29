@@ -1,8 +1,8 @@
 #include "../push.h"
 
 
-
-long long int	ft_atoi(const char *str)//could cut come lines sending num as parameter
+//could cut come lines sending num as parameter
+long long int	ft_atoi(const char *str)
 {
 	int				sign;
 	long long int	num;

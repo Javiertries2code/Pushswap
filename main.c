@@ -33,8 +33,6 @@ int	main(int argc, char *argv[])
 	datarr[0] = data_A;
 	datarr[1] = data_B;
 
-	
-
 	while (++i < argc)
 		val_split(argv[i], ends, datarr);
 		//PASSING NULLS TO SAVE LINES IN duplicate
@@ -42,9 +40,9 @@ int	main(int argc, char *argv[])
 	map_list(ends, ends[0]);
 
 
+	radix(ends, 0);
+	//print_stack(ends);
 	
-	 print_stack(ends);
-
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
 	free(tmp);

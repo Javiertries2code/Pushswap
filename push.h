@@ -35,6 +35,7 @@ typedef struct s_data
 	int				tail_value;
 	int				stack_min;
 	int				stack_max;
+	int				stack_size;
 
 	int				map_index;
 
@@ -66,12 +67,14 @@ void				reset_stack(t_list *head, char stack);
 void				count_index(t_list *head);
 
 // SORTING
+void				radix(t_list **ends, int bits);
 
 void				sorting_five(t_list **ends, int pv) ;
 void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);
-void				find_pv(t_list **ends, t_list *head);
+int					in_order(t_list **ends);
+void				back_to_a(t_list **ends);
 
 // init
 void				init(t_list **ends, t_list **data, t_list *tmp);
@@ -91,6 +94,8 @@ void				print(t_list *head);
 void				rprint(t_list *tail);
 void				testprint(t_list **ends);
 void				print_stack(t_list **ends);
+void print_radix( t_list **ends, t_list *tail, int decimal);
+
 
 // CREATE DESTROY
 void				set_element(t_list *tail, t_list *head);
@@ -99,7 +104,9 @@ void				free_ahead(t_list *tail);
 void				free_forward(t_list *head);
 void				free_backwards(t_list *tail);
 int					free_pointer(char **tmp);
+void				find_pv(t_list **ends, t_list *head);
 
+//HANDLERS
 void				pb(t_list **ends, void *print);
 void				pa(t_list **ends, void *print);
 void				ra(t_list **ends, void *print);

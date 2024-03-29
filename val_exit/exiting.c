@@ -25,8 +25,9 @@ int	count_split(char **argv)
  * @param ends 
  */
 void	exiting(char *str, char **splitted, t_list **ends)
-{
-	if (str)
+{	if(str[0] == 'Y' && (int)str[1] == 'W')
+		ends[0]->data_B->stack_size = 0;//to avoid error printing
+	else if (str)
 	{
 		write(1, str, ft_strlen(str));
 		write(1, "\n", 1);

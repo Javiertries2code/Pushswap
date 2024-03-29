@@ -1,6 +1,6 @@
 #include "../push.h"
 
-void to_binary(t_list *head)
+void     to_binary(t_list *head)
 {
     while (head)
     {

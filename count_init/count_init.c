@@ -98,6 +98,42 @@ void	count_index(t_list *head)
 }
 	
 
+void	find_pv(t_list **ends, t_list *head)
+{ // watch out when accesing the info, if not stack a or B, might segfaul
+	// if i remove breaks to save lines,
+	// i fuck up as it will happen other condition
+
+	int i = 0;
+
+	while (i < 4)
+	{
+		head = ends[i];
+		if (head)
+		{
+			while (head)
+			{
+				if ((head->bigger - head->smaller) == 0 && i == 0)
+				{
+					head->data_A->pv = head->x;
+					break ;
+				}
+				if ((head->bigger - head->smaller) == 0 && i == 2)
+				{
+					head->data_B->pv = head->x;
+					break ;
+				}
+				if ((head->bigger - head->smaller == -1 || head->bigger
+						- head->smaller == 1) && i == 0)
+					head->data_A->pv = head->x;
+				if ((head->bigger - head->smaller == -1 || head->bigger
+						- head->smaller == 1) && i == 2)
+					head->data_B->pv = head->x;
+				head = head->next;
+			}
+		}
+		i += 2;
+	}
+}
 
 // void	count_index(t_list **ends)
 // {

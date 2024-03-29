@@ -4,6 +4,7 @@ void map_list(t_list **ends, t_list *head)
 {
 
     int num_elements = ends[0]->index;
+    ends[0]->data_A->stack_size = ends[0]->index;
     head->data_A->map_index = 1;
     find_max(head);
     find_min_abs(head);
@@ -11,9 +12,6 @@ void map_list(t_list **ends, t_list *head)
 
     while (num_elements > 0)
     {
-      printf("\nnumelements = %d", num_elements);
-          printf("\nmax = %d", head->data_A->stack_max);
-     printf("\nmin-rel = %d", head->data_A->stack_min);
 
         assign_index(ends);
         find_min_rel(ends[0]);

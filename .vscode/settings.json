@@ -10,7 +10,8 @@
         "ostream": "c",
         "*.tcc": "c",
         "algorithm": "c",
-        "limits": "c"
+        "limits": "c",
+        "push.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
