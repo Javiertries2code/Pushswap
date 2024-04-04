@@ -1,5 +1,10 @@
 #include "../push.h"
-
+/**
+ * @brief it counts the number of elements in with the string with splitted on
+ * 
+ * @param argv 
+ * @return int 
+ */
 int	count_split(char **argv)
 {
 	int	count;
@@ -18,7 +23,8 @@ int	count_split(char **argv)
 
 
 /**
- * @brief 
+ * @brief it prints and error in stderror if required
+ * it frees all the content and exits
  * @file exiting.c
  * @param str 
  * @param splitted 
@@ -29,13 +35,8 @@ void	exiting(char *str, char **splitted, t_list **ends)
 	if(str && str[0] == 'Y' && (int)str[1] == 'W')
 		{free_list(ends);
 		exit(1);}
-	else if (str)
-	{
-		write(1, str, ft_strlen(str));
-		write(1, "\n", 1);
-	}
 	else
-		write(1, "Error\n", 7);
+		write(2, "Error\n", 6);
 	if (splitted)
 		free_pointer(splitted);
 	if (ends)
@@ -66,6 +67,8 @@ void	free_list(t_list **ends)
 {
 	t_list	*tmp;
 
+	free(ends[1]->data_A);
+	free(ends[1]->data_B);
 	while (ends[1])
 	{
 		tmp = ends[1]->prev;
@@ -73,7 +76,8 @@ void	free_list(t_list **ends)
 		ends[1] = tmp;
 	}
 	while (ends[3])
-	{
+	{	
+
 		tmp = ends[3]->prev;
 		free(ends[3]);
 		ends[3] = tmp;

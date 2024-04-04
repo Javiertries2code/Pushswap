@@ -93,6 +93,7 @@ void	val_split(char *argv, t_list **ends, t_data **datarr)
 
 /**
  * @brief After the list is already created, it search for duplicates throwing error
+ * in case of finding one
  * 
  * @param ends array with heads and tails of stacks A and B
  * @param tail last element of one stack. Top
@@ -110,7 +111,7 @@ void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 		while (tail)
 		{
 			if (tail->x == head->x && head != tail)
-				exiting("Error\n", NULL, ends);
+				exiting("Error", NULL, ends);
 			if (tail->prev)
 				tail = tail->prev;
 			else

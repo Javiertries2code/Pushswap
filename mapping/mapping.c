@@ -1,5 +1,10 @@
 #include "../push.h"
-
+/**
+ * @brief 
+ * 
+ * @param ends 
+ * @param head 
+ */
 void map_list(t_list **ends, t_list *head)
 {
 
@@ -38,6 +43,12 @@ void find_max(t_list *head)
    
   
 }
+
+/**
+ * @brief Find the minimun value that is not already mapped, 
+ * by checking the xmap value * 
+ * @param head 
+ */
 void find_min_rel(t_list *head)
 {
     int min;
@@ -59,6 +70,11 @@ void find_min_rel(t_list *head)
         
 
 }
+/**
+ * @brief fins the minimun number in the whole set
+ * 
+ * @param head 
+ */
 void find_min_abs(t_list *head)
 {
 
@@ -78,6 +94,12 @@ void find_min_abs(t_list *head)
     head->data_A->stack_min = min;
     head->data_A->map_index = 1;
 }
+
+/**
+ * @brief it  assing the  new index to the mapped variable.
+ * 
+ * @param ends 
+ */
 void assign_index(t_list **ends)
 {
     //write(1, "assign_index", 13);

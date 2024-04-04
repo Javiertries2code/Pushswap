@@ -1,9 +1,10 @@
 #include "../push.h"
 
-/*void	test_sort(t_list **ends, t_list *tmp)
-{
-	
-}*/
+/**
+ * @brief useless so far
+ * 
+ * @param ends 
+ */
 void	sorting(t_list **ends)
 {
 	count_set(ends);
@@ -22,6 +23,11 @@ void	sorting(t_list **ends)
 	// 	sort_bulk(ends);
 }
 
+/**
+ * @brief useless so far
+ * 
+ * @param ends 
+ */
 void	sorting_three(t_list **ends)
 {
 	if (ends[1]->x < ends[1]->prev->x && ends[1]->prev->x < ends[0]->x)

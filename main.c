@@ -12,17 +12,19 @@
 int	main(int argc, char *argv[])
 {
 	int i;
-	t_list *tmp; // additional lines could be saved by adding tmp to ends[5]
+	//t_list *tmp; // additional lines could be saved by adding tmp to ends[5]
 	t_list *ends[4];
 	t_data *datarr[2];
 	i = 0;
+	if (argc == 1)
+		return 0;
 
 	if (argc < 2 || (argc == 2 && counter(argv[1], ' ') == 1 ))
 		exiting(NULL, NULL, NULL);
 		
-	tmp = ft_calloc(1, sizeof(t_list));
-	if (!tmp)
-		exit(1);
+	//tmp = ft_calloc(1, sizeof(t_list));
+	// if (!tmp)
+	// 	exit(1);
 	t_data *data_A = 	ft_calloc(1 ,sizeof(t_data));
 	t_data *data_B =	ft_calloc(1, sizeof(t_data));
 	ends[0] = NULL;
@@ -43,6 +45,9 @@ int	main(int argc, char *argv[])
 
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
-	free(tmp);
+	free(data_A);
+	free(data_B);
+	//free(ends);
+	//free(tmp);
 	return (0);
 }

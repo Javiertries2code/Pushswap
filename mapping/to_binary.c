@@ -1,5 +1,11 @@
 #include "../push.h"
 
+/**
+ * @brief it runs along thestack, ordering to tranform every number into binary
+ * NOTICE it converto the mapped index, xmap
+ * 
+ * @param head 
+ */
 void     to_binary(t_list *head)
 {
     while (head)
@@ -12,6 +18,12 @@ void     to_binary(t_list *head)
     }
 }
 
+/**
+ * @brief it convertes every decimal number into binery, moving bits
+ * 
+ * @param  
+ * @return int 
+ */
 int convert_binary(int ch)
 {
     long long int bin = 0;
