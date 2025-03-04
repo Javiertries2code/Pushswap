@@ -53,6 +53,17 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
+
+/**
+ * @brief Neccesary part for the split function, a per my libft i suppose... WAKE up Javier, Wake up
+ * it copies into a provided char *dst, the dstsize number of characters from src. closes wit '\0'  extra scpace provided
+ * it returns the number of copied characters, that i bet i didnt controlles the error yet
+ * 
+ * @param dst 
+ * @param src 
+ * @param dstsize 
+ * @return size_t 
+ */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	ncopied;
@@ -72,6 +83,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (ncopied);
 }
 
+
+/**
+ support for split function, it counts the occurrences of the seprating char c
+
+ */
  size_t	counter(const char *s, char c)
 {
 	size_t	counter;
@@ -93,6 +109,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (counter);
 }
 
+/**
+ * Neccesary part for the split function
+ * it counts the number of hcaracters untill finding the first occurrence of the sparating character, 
+ * and strlcopy (copy n elemnts into a char * delivered) adding  for he new '\0';
+
+ */
 static char	*new_str(const char *s, char c)
 {
 	size_t	len;

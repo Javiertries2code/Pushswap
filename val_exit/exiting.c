@@ -23,12 +23,9 @@ int	count_split(char **argv)
 
 
 /**
- * @brief it prints and error in stderror if required
+ * @brie it prints and error in stderror if required
  * it frees all the content and exits
- * @file exiting.c
- * @param str 
- * @param splitted 
- * @param ends 
+
  */
 void	exiting(char *str, char **splitted, t_list **ends)
 {	//in case of crashing is causo
@@ -45,10 +42,8 @@ void	exiting(char *str, char **splitted, t_list **ends)
 }
 
 /**
- * @brief freeing the set of numbers
- * 
- * @param numbers 
- * @return int 
+ freeing the set of numbers
+
  */
 int	free_pointer(char **numbers)
 {
@@ -77,7 +72,6 @@ void	free_list(t_list **ends)
 	}
 	while (ends[3])
 	{	
-
 		tmp = ends[3]->prev;
 		free(ends[3]);
 		ends[3] = tmp;

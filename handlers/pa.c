@@ -26,11 +26,3 @@ void pa(t_list **ends, void *print_fun)
     if (!ends[0])
         ends[0] = ends[1];
 }
-
-//   tmp->prev = NULL;
-//     if (ends[0])
-//         ends[0]->prev = tmp;
-//     tmp->next = ends[0];
-//     ends[0] = tmp;
-//     if(!ends[1])
-//         ends[1] = ends[0];

@@ -24,18 +24,11 @@ void	free_ahead(t_list *head)
 	}
 }
 
-/**
- * @brief 
- * 
- * @param ends 
- * @param x 
- * @param datarr 
- */
 void	new_element(t_list **ends, char *x, t_data **datarr)
 {
 	t_list	*new;
 
-	new = calloc(1, sizeof(t_list));
+	new = ft_calloc(1, sizeof(t_list));
 	if (new == NULL || ft_atoi(x) == ERROR)
 		exiting("Error", NULL, ends);
 	new->prev = NULL;

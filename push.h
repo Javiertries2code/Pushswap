@@ -50,6 +50,7 @@ enum				Calls
 	ND_EVAL = 2,
 	ST_EVAL = 1,
 };
+
 //mapping
 void				map_list(t_list **ends, t_list *head);
 void				find_min_abs(t_list *head);
