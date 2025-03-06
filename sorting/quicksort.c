@@ -2,83 +2,67 @@
 // just did it, hope it works, lets do smae with 5, some counters will be added
 void sorting_four(t_list **ends)
 {
-
-	printf("sorting four\n");
-	print_stack(ends);
 	int i;
 
 	t_list *head;
 
 	head = ends[1];
-
 	while (head)
 	{
-		printf("\nSENT higest  i %d\n", head->x);
 
 		i = highest_second(ends[0], head->x);
-		printf("\nRETURNED higest  i %d\n", i);
 		head = head->prev;
 		if (i == 0)
 		{
 			pb(ends, print_fun("pb"));
-			break; 
+			break;
 		}
 		else
 			ra(ends, print_fun("ra"));
-
-
-		
-		
-		
 	}
-	
-
 	sorting_three(ends);
 	pa(ends, print_fun("pa"));
 }
 
 void sorting_five(t_list **ends)
 {
-
-	printf("sorting five");
-
 	int i;
 	int j;
 	t_list *head;
 
-	head = ends[0];
+	head = ends[1];
 	j = 2;
-	while (j)
+	while (head && j != 0)
 	{
-		i = highest_second(ends[0], ends[0]->x);
+		i = highest_second(ends[0], head->x);
+		head = head->prev;
 		if (i == 0)
+		{
 			pb(ends, print_fun("pb"));
-		if (head->next)
-			head = head->next;
-		j--;
+			j--;
+		}
+		else
+			ra(ends, print_fun("ra"));
 	}
 	sorting_three(ends);
 	if (ends[3]->x < ends[3]->prev->x)
-	{
-		pa(ends, print_fun("pa"));
-		pa(ends, print_fun("pa"));
-	}
-	else
-	{
-		sa(ends, print_fun("sa"));
-		pa(ends, print_fun("pa"));
-		pa(ends, print_fun("pa"));
-	}
+		sb(ends, print_fun("sb"));
+	pa(ends, print_fun("pa"));
+	pa(ends, print_fun("pa"));
 }
 
 void sorting_four_five(t_list **ends)
 {
 	if ((ends[1]->index) == 4)
-		{sorting_four(ends);
-			print_stack(ends);}
+	{
+		sorting_four(ends);
+		print_stack(ends);
+	}
 	else if (ends[1]->index == 5)
-		{sorting_five(ends);
-			print_stack(ends);}
+	{
+		sorting_five(ends);
+		print_stack(ends);
+	}
 
 	exiting("YW", NULL, ends);
 }
@@ -102,8 +86,7 @@ int highest_second(t_list *head, int value)
 
 		printf("head->x %d  value i  %d  \t\t\thighest_second\n", head->x, i);
 
-			head = head->next;
-		
+		head = head->next;
 	}
 	return i;
 }
