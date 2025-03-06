@@ -11,7 +11,9 @@
         "*.tcc": "c",
         "algorithm": "c",
         "limits": "c",
-        "push.h": "c"
+        "push.h": "c",
+        "chrono": "c",
+        "variant": "c"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "makefile.configureOnOpen": false

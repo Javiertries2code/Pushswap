@@ -25,11 +25,11 @@ while (bits < 16)
         else
             break;
     }
-  	print_stack(ends);
+  	//print_stack(ends);
 
     back_to_a(ends);
- 	print_stack(ends);
-        sleep(2);
+ 	//print_stack(ends);
+      //  sleep(1);
 
     decimal *= 10;
 bits++;

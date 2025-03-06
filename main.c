@@ -8,11 +8,7 @@ int	main(int argc, char *argv[])
 	t_data *datarr[2];
 
 	i = 0;
-	if (argc == 1)
-		return 0;
 
-	if (argc < 2 || (argc == 2 && counter(argv[1], ' ') == 1 ))
-		exiting(NULL, NULL, NULL);
 
 	t_data *data_A = 	ft_calloc(1 ,sizeof(t_data));
 	t_data *data_B =	ft_calloc(1, sizeof(t_data));
@@ -22,13 +18,17 @@ int	main(int argc, char *argv[])
 	ends[3] = NULL;
 	datarr[0] = data_A;
 	datarr[1] = data_B;
+	basic_valid(argc, argv, datarr);
 	while (++i < argc)
 		val_split(argv[i], ends, datarr);
 	//PASSING NULLS TO SAVE LINES IN duplicate
 	find_duplicate(ends, NULL, NULL);
 
 	map_list(ends, ends[0]);
-	radix(ends, 0);
+
+	sorting(ends);
+
+	//radix(ends, 0);
 
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);

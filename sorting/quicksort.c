@@ -1,43 +1,109 @@
 #include "../push.h"
-
-void	sorting_five(t_list **ends, int pv)
-// gotta check existance in case of
+// just did it, hope it works, lets do smae with 5, some counters will be added
+void sorting_four(t_list **ends)
 {
-	// i gottapass pt_lit pointers otherwise will fuckup later
-	// tail_a = ends[1];
-	// tail_b = ends[3];
-	// printf("\nends[1]->x\t %d\tends[1]->data_A->head_value\t%d \tpv - %d\n",
-	// tail_a->x, tail_a->data_A->head_value, tail_a->data_A->pv);
-	// ends[1] should be updated after every handler
-	while (ends[1] && ends[1]->x != ends[1]->data_A->head_value)
-	{
-		printf("ends[1]->x %d\t ends[1] \t%d\n", ends[1]->x,
-			ends[1]->data_A->pv);
-		usleep(50000);
 
-		if (ends[1]->x < pv)
-			pb(ends, print_fun("pb"));
-		else if (ends[1]->x > pv)
-			ra(ends, print_fun("ra"));
-		else if (ends[1]->x == pv)
-			sa(ends, print_fun("sa"));
-	}
+	printf("sorting four\n");
 	print_stack(ends);
-	usleep(50000);
-	count_set(ends);
+	int i;
 
-	if (ends[0]->x < ends[0]->next->x) // ultimo A< penultimo A
+	t_list *head;
+
+	head = ends[1];
+
+	while (head)
 	{
-		if (ends[3]->x > ends[3]->prev->x)      // ultimo B > penultimo B,
-			rr(ends, print_fun("rr"));          // revers both,
-		else if (ends[3]->x < ends[3]->prev->x) // as before,not touching B
+		printf("\nSENT higest  i %d\n", head->x);
+
+		i = highest_second(ends[0], head->x);
+		printf("\nRETURNED higest  i %d\n", i);
+		head = head->prev;
+		if (i == 0)
+		{
+			pb(ends, print_fun("pb"));
+			break; 
+		}
+		else
 			ra(ends, print_fun("ra"));
-		sa(ends, print_fun("sa"));   // two uppers swithed
-		rra(ends, print_fun("rra")); // pv back to place
+
+
+		
+		
+		
 	}
-	else if (ends[0]->x > ends[0]->prev->x) // ultimo A, penultimo A OK
-		if (ends[3]->x < ends[3]->prev->x)  // B gotta switch
-			sb(ends, print_fun("sb"));
+	
+
+	sorting_three(ends);
 	pa(ends, print_fun("pa"));
-	pa(ends, print_fun("pa"));
+}
+
+void sorting_five(t_list **ends)
+{
+
+	printf("sorting five");
+
+	int i;
+	int j;
+	t_list *head;
+
+	head = ends[0];
+	j = 2;
+	while (j)
+	{
+		i = highest_second(ends[0], ends[0]->x);
+		if (i == 0)
+			pb(ends, print_fun("pb"));
+		if (head->next)
+			head = head->next;
+		j--;
+	}
+	sorting_three(ends);
+	if (ends[3]->x < ends[3]->prev->x)
+	{
+		pa(ends, print_fun("pa"));
+		pa(ends, print_fun("pa"));
+	}
+	else
+	{
+		sa(ends, print_fun("sa"));
+		pa(ends, print_fun("pa"));
+		pa(ends, print_fun("pa"));
+	}
+}
+
+void sorting_four_five(t_list **ends)
+{
+	if ((ends[1]->index) == 4)
+		{sorting_four(ends);
+			print_stack(ends);}
+	else if (ends[1]->index == 5)
+		{sorting_five(ends);
+			print_stack(ends);}
+
+	exiting("YW", NULL, ends);
+}
+
+/**going troghthe list, so will add i++ for every larger number found,
+ * if i happenst o be 0. will be the higest, if 1 second higest
+ *
+ */
+
+int highest_second(t_list *head, int value)
+{
+	printf(" value recived highes   %d  \n", value);
+
+	int i;
+
+	i = 0;
+	while (head)
+	{
+		if (head->x < value)
+			i++;
+
+		printf("head->x %d  value i  %d  \t\t\thighest_second\n", head->x, i);
+
+			head = head->next;
+		
+	}
+	return i;
 }

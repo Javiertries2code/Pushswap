@@ -68,13 +68,3 @@ void	print_stack(t_list **ends)
 	printf("\t-------------------------------------------\nStack\t\t\tA\t\t\tB\n ");
 }
 
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned int i;
-	char *str;
-
-	str = (char *)s;
-	i = 0;
-	while (i < n)
-		str[i++] = '\0';
-}

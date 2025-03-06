@@ -15,6 +15,18 @@ void	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
+void	ft_bzero(void *s, size_t n)
+{
+	unsigned int i;
+	char *str;
+
+	str = (char *)s;
+	i = 0;
+	while (i < n)
+		str[i++] = '\0';
+}
+
+
 /**
  *Counts the lenght of an String, number of characters, excluded
  *  the closing chracter. "HOLA" returns 4
