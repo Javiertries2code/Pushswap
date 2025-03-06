@@ -9,9 +9,9 @@
 typedef struct s_list
 {
 	int				x;
-	int 			xmap;
+	int				xmap;
 	long long int	xbin;
-	
+
 	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
@@ -51,7 +51,7 @@ enum				Calls
 	ST_EVAL = 1,
 };
 
-//mapping
+// mapping
 void				map_list(t_list **ends, t_list *head);
 void				find_min_abs(t_list *head);
 void				assign_index(t_list **ends);
@@ -66,18 +66,19 @@ void				set_element_stack(t_list *tail, t_list *head);
 void				set_stack(t_list *head, t_list *tail, char stack);
 void				reset_stack(t_list *head, char stack);
 void				count_index(t_list *head);
+void				extrafree(t_list **ends, t_data *data_A, t_data *data_B);
 
 // SORTING
-int highest_second(t_list *head, int value);
+int					highest_second(t_list *head, int value);
 
-void 				sorting_four_five(t_list **ends);
+void				sorting_four_five(t_list **ends);
 
-void 				sorting_five(t_list **ends);
-void 				sorting_four(t_list **ends);
+void				sorting_five(t_list **ends);
+void				sorting_four(t_list **ends);
 
-void 				solve_one_middle(t_list **ends);
+void				solve_one_middle(t_list **ends);
 void				radix(t_list **ends, int bits);
-void				sorting_five(t_list **ends) ;
+void				sorting_five(t_list **ends);
 void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);
@@ -86,16 +87,14 @@ void				back_to_a(t_list **ends);
 
 // init
 void				init(t_list **ends, t_list **data, t_list *tmp);
-// void				map_list(t_list **ends, t_list *head, t_list *tail){
 
 // VALIDATE
-void 				basic_valid(int argc, char *argv[], t_data **datarr);
+void				basic_valid(int argc, char *argv[], t_data **datarr);
 void				val_split(char *argv, t_list **ends, t_data **datarr);
 void				exiting(char *str, char **splitted, t_list **ends);
 int					valid(const char *s, char **splitted, t_list **ends);
 int					count_split(char **numbers);
 void				free_list(t_list **ends);
-// void				find_duplicate(t_list **ends);
 void				find_duplicate(t_list **ends, t_list *head, t_list *tail);
 
 // SUPPORT
@@ -104,18 +103,19 @@ void				rprint(t_list *tail);
 void				testprint(t_list **ends);
 void				print_stack(t_list **ends);
 
-
 // CREATE DESTROY
-void 				free_datarr(t_data **datarr);
+void				free_datarr(t_data **datarr);
 void				set_element(t_list *tail, t_list *head);
 void				new_element(t_list **ends, char *x, t_data **datarr);
 void				free_ahead(t_list *tail);
 void				free_forward(t_list *head);
 void				free_backwards(t_list *tail);
 int					free_pointer(char **tmp);
-void				find_pv(t_list **ends, t_list *head);
+//PROBABLY UNUSED
 
-//HANDLERS
+//void				find_pv(t_list **ends, t_list *head);
+
+// HANDLERS
 void				pb(t_list **ends, void *print);
 void				pa(t_list **ends, void *print);
 void				ra(t_list **ends, void *print);

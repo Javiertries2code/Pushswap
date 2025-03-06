@@ -18,7 +18,7 @@ TESTS := $(addprefix $(DIR_TEST), $(TEST_FILES))
 #-------------
 #-------------
 MAPPING_FILES = mapping.c to_binary.c
-CREATE_INIT_FILES = create_free.c count_init.c
+CREATE_INIT_FILES = create_free.c count_init.c stack_set.c
 SORTING_FILES = sorting.c quicksort.c radix.c
 VALIDATE_FILES = validate.c exiting.c
 UTILS_FILES = utils.c utils_support.c

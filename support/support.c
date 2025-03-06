@@ -5,8 +5,7 @@ void	print(t_list *head)
 	while (head)
 	{
 		printf("\nFORWARD\nvalue\t%d\tindex\t%d\t%c\n ", head->x, head->index, head->stack);
-		// printf("Address - %p\tPREV - %p\t NEXT - %p \n", head, head->prev,
-		// 	head->next);
+	
 		printf("\nbigger\t%d\tsmaller\t%d\n ", head->bigger, head->smaller);
 		if (head->next)
 			head = head->next;
@@ -20,8 +19,7 @@ void	rprint(t_list *tail)
 	while (tail)
 	{
 		printf("\nBackwards\nvalue\t%d\tindex\t%d\t%c\n ", tail->x, tail->index, tail->stack);
-		// printf("Address - %p\tPREV - %p\t NEXT - %p \n", head, head->prev,
-		// 	head->next);
+	
 		printf("\nbigger\t%d\tsmaller\t%d\n ", tail->bigger, tail->smaller);
 		if (tail->prev)
 			tail = tail->prev;

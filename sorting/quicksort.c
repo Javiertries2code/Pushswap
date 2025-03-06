@@ -1,21 +1,19 @@
 #include "../push.h"
-// just did it, hope it works, lets do smae with 5, some counters will be added
-void sorting_four(t_list **ends)
-{
-	int i;
 
-	t_list *head;
+void	sorting_four(t_list **ends)
+{
+	int		i;
+	t_list	*head;
 
 	head = ends[1];
 	while (head)
 	{
-
 		i = highest_second(ends[0], head->x);
 		head = head->prev;
 		if (i == 0)
 		{
 			pb(ends, print_fun("pb"));
-			break;
+			break ;
 		}
 		else
 			ra(ends, print_fun("ra"));
@@ -24,11 +22,11 @@ void sorting_four(t_list **ends)
 	pa(ends, print_fun("pa"));
 }
 
-void sorting_five(t_list **ends)
+void	sorting_five(t_list **ends)
 {
-	int i;
-	int j;
-	t_list *head;
+	int		i;
+	int		j;
+	t_list	*head;
 
 	head = ends[1];
 	j = 2;
@@ -51,7 +49,7 @@ void sorting_five(t_list **ends)
 	pa(ends, print_fun("pa"));
 }
 
-void sorting_four_five(t_list **ends)
+void	sorting_four_five(t_list **ends)
 {
 	if ((ends[1]->index) == 4)
 	{
@@ -63,19 +61,11 @@ void sorting_four_five(t_list **ends)
 		sorting_five(ends);
 		print_stack(ends);
 	}
-
 	exiting("YW", NULL, ends);
 }
 
-/**going troghthe list, so will add i++ for every larger number found,
- * if i happenst o be 0. will be the higest, if 1 second higest
- *
- */
-
-int highest_second(t_list *head, int value)
+int	highest_second(t_list *head, int value)
 {
-	printf(" value recived highes   %d  \n", value);
-
 	int i;
 
 	i = 0;
@@ -83,10 +73,7 @@ int highest_second(t_list *head, int value)
 	{
 		if (head->x < value)
 			i++;
-
-		printf("head->x %d  value i  %d  \t\t\thighest_second\n", head->x, i);
-
 		head = head->next;
 	}
-	return i;
+	return (i);
 }

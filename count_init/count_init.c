@@ -4,21 +4,6 @@ void	set_element_stack(t_list *tail, t_list *head);
 void	set_stack(t_list *head, t_list *tail, char stack);
 void	count_index(t_list *head);
 
-void	reset_stack(t_list *head, char stack)
-{
-	while (head)
-	{
-		head->smaller = 0;
-		head->bigger = 0;
-		head->bigger_stack = 0;
-		head->smaller_stack = 0;
-		head->stack = stack;
-		if (head->next)
-			head = head->next;
-		else
-			break ;
-	}
-}
 void	count_set(t_list **ends)
 {
 	if (ends[0])
@@ -38,47 +23,9 @@ void	count_set(t_list **ends)
 			ends[2]->data_A->head_value = ends[2]->x;
 			ends[2]->data_A->tail_value = ends[3]->x;
 		}
-		// count_index(ends);
-		find_pv(ends, NULL);
+		////PROBABLY UNUSED
+		// find_pv(ends, NULL);
 	}
-}
-void	set_stack(t_list *head, t_list *tail, char stack)
-{
-	t_list	*aux;
-
-	if (!head)
-		return ;
-	aux = tail;
-	while (head)
-	{
-		head->index++;
-		head->stack = stack;
-		while (tail)
-		{
-			set_element_stack(tail, head);
-			if (tail->x == head->x && head != tail)
-				exiting("Error\n", NULL, NULL);
-			if (tail->prev)
-				tail = tail->prev;
-			else
-			{
-				tail = aux;
-				break ;
-			}
-		}
-		if (head->next)
-			head = head->next;
-		else
-			break ;
-	}
-}
-
-void	set_element_stack(t_list *tail, t_list *head)
-{
-	if (tail->x > head->x)
-		tail->smaller++;
-	if (tail->x < head->x)
-		tail->bigger++;
 }
 
 void	count_index(t_list *head)
@@ -96,70 +43,38 @@ void	count_index(t_list *head)
 			break ;
 	}
 }
-	
-
-void	find_pv(t_list **ends, t_list *head)
-{ // watch out when accesing the info, if not stack a or B, might segfaul
-	// if i remove breaks to save lines,
-	// i fuck up as it will happen other condition
-
-	int i = 0;
-
-	while (i < 4)
-	{
-		head = ends[i];
-		if (head)
-		{
-			while (head)
-			{
-				if ((head->bigger - head->smaller) == 0 && i == 0)
-				{
-					head->data_A->pv = head->x;
-					break ;
-				}
-				if ((head->bigger - head->smaller) == 0 && i == 2)
-				{
-					head->data_B->pv = head->x;
-					break ;
-				}
-				if ((head->bigger - head->smaller == -1 || head->bigger
-						- head->smaller == 1) && i == 0)
-					head->data_A->pv = head->x;
-				if ((head->bigger - head->smaller == -1 || head->bigger
-						- head->smaller == 1) && i == 2)
-					head->data_B->pv = head->x;
-				head = head->next;
-			}
-		}
-		i += 2;
-	}
-}
-
-// void	count_index(t_list **ends)
+// PROBABLY UNUSED
+// void	find_pv(t_list **ends, t_list *head)
 // {
-// 	int count = 0;
-// 	int i = 0;
-// 	while (i != 2)
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < 4)
 // 	{
-// 		count = 0;
-// 		if (ends[i])
+// 		head = ends[i];
+// 		if (head)
 // 		{
-// 			while (ends[i])
+// 			while (head)
 // 			{
-// 				count++;
-// 				if (ends[i]->stack == 'A')
-// 					if (ends[i]->x == ends[i]->data_A->pv)
-// 						ends[i]->data_A->index = count;
-// 				if (ends[i]->stack == 'B')
-// 					if (ends[i]->x == ends[i]->data_B->pv)
-// 						ends[i]->data_A->index = count;
-// 				ends[i]->index = count;
-// 				if (ends[i]->next)
-// 					ends[i] = ends[i]->next;
-// 				else
+// 				if ((head->bigger - head->smaller) == 0 && i == 0)
+// 				{
+// 					head->data_A->pv = head->x;
 // 					break ;
+// 				}
+// 				if ((head->bigger - head->smaller) == 0 && i == 2)
+// 				{
+// 					head->data_B->pv = head->x;
+// 					break ;
+// 				}
+// 				if ((head->bigger - head->smaller == -1 || head->bigger
+// 						- head->smaller == 1) && i == 0)
+// 					head->data_A->pv = head->x;
+// 				if ((head->bigger - head->smaller == -1 || head->bigger
+// 						- head->smaller == 1) && i == 2)
+// 					head->data_B->pv = head->x;
+// 				head = head->next;
 // 			}
-// 			i = i + 2;
 // 		}
+// 		i += 2;
 // 	}
 // }

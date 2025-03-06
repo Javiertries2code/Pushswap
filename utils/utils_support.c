@@ -1,9 +1,34 @@
  #include "../push.h"
-/**
- allocates memory wih initial value 0 for every bit
- * 
 
- */
+long long int	ft_atoi(const char *str)
+{
+	int				sign;
+	long long int	num;
+	int				i;
+
+	num = 0;
+	sign = 1;
+	i = 0;
+	while (str[i] && (str[i] == '\f' || str[i] == '\t' || str[i] == ' '
+			|| str[i] == '\n' || str[i] == '\r' || str[i] == '\v'))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i++] == '-')
+			sign = -sign;
+	}
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		num = 10 * num;
+		num = num + str[i] - '0';
+		i++;
+	}
+	num *= sign;
+	if (num > INT_MAX || num < INT_MIN)
+		return (ERROR);
+	return (num);
+}
+
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
@@ -25,13 +50,6 @@ void	ft_bzero(void *s, size_t n)
 	while (i < n)
 		str[i++] = '\0';
 }
-
-
-/**
- *Counts the lenght of an String, number of characters, excluded
- *  the closing chracter. "HOLA" returns 4
-
- */
 
 size_t	ft_strlen(const char *s)
 {

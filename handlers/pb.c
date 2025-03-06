@@ -1,39 +1,29 @@
 #include "../push.h"
 
-//    t_list *ends[4] = {head_a, tail_a, head_b, tail_b};
-
-void pb(t_list **ends, void *print_fun)
+void	pb(t_list **ends, void *print_fun)
 {
-    t_list *tmp;
+	t_list *tmp;
 
-    if (ends[0] == NULL || ends[1] == NULL || !print_fun)
-        return;
-    tmp = ends[1];
+	if (ends[0] == NULL || ends[1] == NULL || !print_fun)
+		return ;
+	tmp = ends[1];
 
-    if (ends[1]->prev)
-    {
-        ends[1]->prev->next = NULL;
-        ends[1] = ends[1]->prev;
-    }
-    else
-    {
-        ends[0] = NULL;
-        ends[1] = NULL;
-    }
+	if (ends[1]->prev)
+	{
+		ends[1]->prev->next = NULL;
+		ends[1] = ends[1]->prev;
+	}
+	else
+	{
+		ends[0] = NULL;
+		ends[1] = NULL;
+	}
 
-    tmp->next = NULL;
-    if (ends[3])
-        ends[3]->next = tmp;
-    tmp->prev = ends[3];
-    ends[3] = tmp;
-    if (!ends[2])
-        ends[2] = ends[3];
+	tmp->next = NULL;
+	if (ends[3])
+		ends[3]->next = tmp;
+	tmp->prev = ends[3];
+	ends[3] = tmp;
+	if (!ends[2])
+		ends[2] = ends[3];
 }
-
-// tmp->prev = NULL;
-//     if (ends[2])
-//         ends[2]->prev = tmp;
-//     tmp->next = ends[2];
-//     ends[2] = tmp;
-//     if (!ends[3])
-//         ends[3] = ends[2];

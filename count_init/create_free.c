@@ -43,10 +43,8 @@ void	new_element(t_list **ends, char *x, t_data **datarr)
 		new->next = ends[0];
 		ends[0]->prev = new;
 		new->index = ends[0]->index + 1;
-	
 	}
 	new->x = ft_atoi(x);
-	
 	ends[0] = new;
 	ends[0]->stack = 'A';
 	ends[0]->smaller = 0;
@@ -54,4 +52,3 @@ void	new_element(t_list **ends, char *x, t_data **datarr)
 	ends[0]->data_A = datarr[0];
 	ends[0]->data_B = datarr[1];
 }
-

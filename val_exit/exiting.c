@@ -28,7 +28,7 @@ int	count_split(char **argv)
 
  */
 void	exiting(char *str, char **splitted, t_list **ends)
-{	//in case of crashing is causo
+{	
 	if(str && str[0] == 'Y' && (int)str[1] == 'W')
 		{
 			free_list(ends);

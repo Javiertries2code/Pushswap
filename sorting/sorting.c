@@ -1,6 +1,6 @@
 #include "../push.h"
 
-void sorting(t_list **ends)
+void	sorting(t_list **ends)
 {
 	count_set(ends);
 	if (ends[1]->index < 2)
@@ -23,10 +23,10 @@ void sorting(t_list **ends)
 		radix(ends, 0);
 }
 
-void sorting_three(t_list **ends)
+void	sorting_three(t_list **ends)
 {
 	if (ends[1]->x < ends[1]->prev->x && ends[1]->prev->x < ends[0]->x)
-		return;
+		return ;
 	if (ends[1]->x > ends[1]->prev->x && ends[1]->prev->x > ends[0]->x)
 	{
 		ra(ends, print_fun("ra"));
@@ -44,13 +44,10 @@ void sorting_three(t_list **ends)
 	}
 	else if (ends[1]->prev->x < ends[0]->x)
 		solve_one_middle(ends);
-
-	
 }
 
-void solve_one_middle(t_list **ends)
+void	solve_one_middle(t_list **ends)
 {
-
 	if (ends[1]->x < ends[0]->x)
 	{
 		sa(ends, print_fun("sa"));
