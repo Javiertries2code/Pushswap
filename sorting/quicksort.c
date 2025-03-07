@@ -69,7 +69,7 @@ int	highest_second(t_list *head, int value)
 	i = 0;
 	while (head)
 	{
-		if (head->x < value)
+		if (head->x > value)
 			i++;
 		head = head->next;
 	}

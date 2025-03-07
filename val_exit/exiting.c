@@ -14,8 +14,8 @@ void	exiting(char *str, char **splitted, t_list **ends)
 {
 	if (str && str[0] == 'Y' && (int)str[1] == 'W')
 	{
-		 print_stack(ends);
-		 printf("PRINTING IN EXITING\n");
+		//  print_stack(ends);
+		//  printf("PRINTING IN EXITING\n");
 		free_list(ends);
 		exit(1);
 	}

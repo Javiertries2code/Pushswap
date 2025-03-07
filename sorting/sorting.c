@@ -2,10 +2,10 @@
 
 void	sorting(t_list **ends)
 {
-	print_stack(ends);
+	//print_stack(ends);
 	rev_stack(ends);
 	count_set(ends);
-	print_stack(ends);
+	//print_stack(ends);
 	already_ordered(ends);
 	if (ends[1]->index < 2)
 		exiting("YW", NULL, ends);
@@ -29,22 +29,23 @@ void	sorting(t_list **ends)
 
 void	sorting_three(t_list **ends)
 {
-	if (ends[1]->x < ends[1]->prev->x && ends[1]->prev->x < ends[0]->x)
-		return ;
 	if (ends[1]->x > ends[1]->prev->x && ends[1]->prev->x > ends[0]->x)
+		// 1 2 3 ok
+		return ;
+	if (ends[1]->x < ends[1]->prev->x && ends[1]->prev->x < ends[0]->x)
+		// 3 2 1ok
 	{
 		ra(ends, print_fun("ra"));
 		sa(ends, print_fun("sa"));
 	}
 	else if (ends[1]->prev->x > ends[0]->x)
 	{
-		if (ends[1]->x < ends[0]->x)
-		{
-			sa(ends, print_fun("sa"));
+		if (ends[1]->x < ends[0]->x) 
 			ra(ends, print_fun("ra"));
-		}
+		
 		else if (ends[1]->x < ends[1]->prev->x)
-			rra(ends, print_fun("rra"));
+			sa(ends, print_fun("sa"));
+	
 	}
 	else if (ends[1]->prev->x < ends[0]->x)
 		solve_one_middle(ends);
@@ -52,16 +53,14 @@ void	sorting_three(t_list **ends)
 
 void	solve_one_middle(t_list **ends)
 {
+	
 	if (ends[1]->x < ends[0]->x)
-	{
-		sa(ends, print_fun("sa"));
-	}
+		rra(ends, print_fun("rra"));
 	else if (ends[1]->x > ends[0]->x)
 	{
-		ra(ends, print_fun("ra"));
-	}
-	else if (ends[1]->prev->x < ends[0]->x)
-	{
 		rra(ends, print_fun("rra"));
+		sa(ends, print_fun("sa"));
+
 	}
+
 }
