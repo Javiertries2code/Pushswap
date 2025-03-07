@@ -52,3 +52,15 @@ void	set_element_stack(t_list *tail, t_list *head)
 	if (tail->x < head->x)
 		tail->bigger++;
 }
+
+void	rev_stack(t_list **ends)
+{
+	while (ends[1])
+		pass_b(ends);
+
+	while (ends[3])
+	{
+		turn(ends);
+		pass_a(ends);
+	}
+}

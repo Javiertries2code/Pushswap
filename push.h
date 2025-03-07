@@ -41,7 +41,10 @@ typedef struct s_data
 
 }					t_data;
 
-enum { MIN_MAX_ERROR = 9999999999LL };
+enum
+{
+	MIN_MAX_ERROR = 9999999999LL
+};
 
 enum				Calls
 {
@@ -69,8 +72,14 @@ void				set_stack(t_list *head, t_list *tail, char stack);
 void				reset_stack(t_list *head, char stack);
 void				count_index(t_list *head);
 void				extrafree(t_list **ends, t_data *data_A, t_data *data_B);
+void				rev_stack(t_list **ends);
+void				pass_a(t_list **ends);
+void				pass_b(t_list **ends);
+void				turn(t_list **ends);
+
 
 // SORTING
+
 int					highest_second(t_list *head, int value);
 
 void				sorting_four_five(t_list **ends);
@@ -114,9 +123,9 @@ void				free_ahead(t_list *tail);
 void				free_forward(t_list *head);
 void				free_backwards(t_list *tail);
 int					free_pointer(char **tmp);
-//PROBABLY UNUSED
+// PROBABLY UNUSED
 
-//void				find_pv(t_list **ends, t_list *head);
+// void				find_pv(t_list **ends, t_list *head);
 
 // HANDLERS
 void				pb(t_list **ends, void *print);

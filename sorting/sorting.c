@@ -2,12 +2,9 @@
 
 void	sorting(t_list **ends)
 {
+	rev_stack(ends);
+	in_order(ends);
 	count_set(ends);
-
-	print_stack(ends);
-	//in_order(ends);
-	//in_order_reverse(ends);
-	
 	if (ends[1]->index < 2)
 		exiting("YW", NULL, ends);
 	if (ends[1]->index == 2 && ends[0]->x > ends[1]->x)
@@ -30,7 +27,6 @@ void	sorting(t_list **ends)
 
 void	sorting_three(t_list **ends)
 {
-	
 	if (ends[1]->x < ends[1]->prev->x && ends[1]->prev->x < ends[0]->x)
 		return ;
 	if (ends[1]->x > ends[1]->prev->x && ends[1]->prev->x > ends[0]->x)
