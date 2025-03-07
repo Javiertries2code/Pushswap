@@ -59,7 +59,6 @@ void	sorting_four_five(t_list **ends)
 	{
 		sorting_five(ends);
 	}
-	print_stack(ends);
 	exiting("YW", NULL, ends);
 }
 
