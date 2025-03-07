@@ -1,3 +1,6 @@
+
+
+
 #include "../push.h"
 
 void	map_list(t_list **ends, t_list *head)
@@ -16,7 +19,8 @@ void	map_list(t_list **ends, t_list *head)
 		num_elements--;
 	}
 }
-void	find_max(t_list *head)
+
+void find_max(t_list *head)
 {
 	int	max;
 

@@ -41,6 +41,8 @@ typedef struct s_data
 
 }					t_data;
 
+enum { MIN_MAX_ERROR = 9999999999LL };
+
 enum				Calls
 {
 	ERROR = 0,
@@ -83,6 +85,7 @@ void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);
 int					in_order(t_list **ends);
+int					in_order_reverse(t_list **ends);
 void				back_to_a(t_list **ends);
 
 // init

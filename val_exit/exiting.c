@@ -1,10 +1,5 @@
 #include "../push.h"
-/**
- * @brief it counts the number of elements in with the string with splitted on
- * 
- * @param argv 
- * @return int 
- */
+
 int	count_split(char **argv)
 {
 	int	count;
@@ -15,25 +10,13 @@ int	count_split(char **argv)
 	return (count);
 }
 
-// i could pass the count as an argument instead,
-// FUCK EFFICIENCY
-
-// to fit thing i gotta return smthg,i can t return pointer to local variable,
-// as it will be done and gone.
-
-
-/**
- * @brie it prints and error in stderror if required
- * it frees all the content and exits
-
- */
 void	exiting(char *str, char **splitted, t_list **ends)
-{	
-	if(str && str[0] == 'Y' && (int)str[1] == 'W')
-		{
-			free_list(ends);
-			exit(1);
-		}
+{
+	if (str && str[0] == 'Y' && (int)str[1] == 'W')
+	{
+		free_list(ends);
+		exit(1);
+	}
 	else
 		write(2, "Error\n", 6);
 	if (splitted)
@@ -43,10 +26,6 @@ void	exiting(char *str, char **splitted, t_list **ends)
 	exit(1);
 }
 
-/**
- freeing the set of numbers
-
- */
 int	free_pointer(char **numbers)
 {
 	int	i;
@@ -73,14 +52,14 @@ void	free_list(t_list **ends)
 		ends[1] = tmp;
 	}
 	while (ends[3])
-	{	
+	{
 		tmp = ends[3]->prev;
 		free(ends[3]);
 		ends[3] = tmp;
 	}
 }
 
-void free_datarr(t_data *datarr[])
+void	free_datarr(t_data *datarr[])
 {
 	free(datarr[0]);
 	free(datarr[1]);

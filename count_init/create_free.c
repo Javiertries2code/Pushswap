@@ -29,7 +29,7 @@ void	new_element(t_list **ends, char *x, t_data **datarr)
 	t_list	*new;
 
 	new = ft_calloc(1, sizeof(t_list));
-	if (new == NULL || ft_atoi(x) == ERROR)
+	if (new == NULL || ft_atoi(x) == MIN_MAX_ERROR)
 		exiting("Error", NULL, ends);
 	new->prev = NULL;
 	if (!ends[0])

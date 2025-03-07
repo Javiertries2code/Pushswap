@@ -1,11 +1,5 @@
 #include "../push.h"
 
-
-
-// para buscar coma o punto
-// int				i;
-// i = 0;
-// sobraba parece ser
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned int	len;
@@ -24,19 +18,6 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-/**
- * @brief Neccesary part for the split function,
-	a per my libft i suppose... WAKE up Javier, Wake up
- * it copies into a provided char *dst,
-	the dstsize number of characters from src. closes wit '\0'  extra scpace provided
- * it returns the number of copied characters,
-	that i bet i didnt controlles the error yet
- *
- * @param dst
- * @param src
- * @param dstsize
- * @return size_t
- */
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	ncopied;

@@ -1,4 +1,4 @@
- #include "../push.h"
+#include "../push.h"
 
 long long int	ft_atoi(const char *str)
 {
@@ -25,7 +25,7 @@ long long int	ft_atoi(const char *str)
 	}
 	num *= sign;
 	if (num > INT_MAX || num < INT_MIN)
-		return (ERROR);
+		return (MIN_MAX_ERROR);
 	return (num);
 }
 
@@ -42,8 +42,8 @@ void	*ft_calloc(size_t count, size_t size)
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned int i;
-	char *str;
+	unsigned int	i;
+	char			*str;
 
 	str = (char *)s;
 	i = 0;
@@ -53,7 +53,7 @@ void	ft_bzero(void *s, size_t n)
 
 size_t	ft_strlen(const char *s)
 {
-	unsigned int	i;
+	unsigned int i;
 
 	i = 0;
 	while (s[i])

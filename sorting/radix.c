@@ -29,6 +29,27 @@ void	radix(t_list **ends, int bits)
 	}
 }
 
+
+int	in_order_reverse(t_list **ends)
+{
+	t_list	*head;
+
+	head = ends[0];
+	while (head)
+	{
+		if (head->prev && head->x > head->prev->x)
+			return (0);
+		if (head->next)
+			head = head->next;
+		else
+		{
+			exiting("YW", NULL, ends);
+			break ;
+		}
+	}
+	return (1);
+}
+
 int	in_order(t_list **ends)
 {
 	t_list	*head;
