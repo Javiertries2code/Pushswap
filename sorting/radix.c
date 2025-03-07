@@ -29,22 +29,24 @@ void	radix(t_list **ends, int bits)
 	}
 }
 
-
-int	in_order_reverse(t_list **ends)
+int	already_ordered(t_list **ends)
 {
 	t_list	*head;
 
 	head = ends[0];
 	while (head)
 	{
-		if (head->prev && head->x > head->prev->x)
-			return (0);
 		if (head->next)
-			head = head->next;
+		{
+			if (head->x < head->next->x)
+				head = head->next;
+			else
+				return (1);
+		}
 		else
 		{
+			printf("already_ordered\n");
 			exiting("YW", NULL, ends);
-			break ;
 		}
 	}
 	return (1);

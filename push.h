@@ -94,7 +94,7 @@ void				sorting_three(t_list **ends);
 void				sorting(t_list **ends);
 void				test_sort(t_list **ends, t_list *tmp);
 int					in_order(t_list **ends);
-int					in_order_reverse(t_list **ends);
+int					already_ordered(t_list **ends);
 void				back_to_a(t_list **ends);
 
 // init

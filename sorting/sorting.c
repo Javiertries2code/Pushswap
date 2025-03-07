@@ -2,9 +2,11 @@
 
 void	sorting(t_list **ends)
 {
+	print_stack(ends);
 	rev_stack(ends);
-	in_order(ends);
 	count_set(ends);
+	print_stack(ends);
+	already_ordered(ends);
 	if (ends[1]->index < 2)
 		exiting("YW", NULL, ends);
 	if (ends[1]->index == 2 && ends[0]->x > ends[1]->x)
