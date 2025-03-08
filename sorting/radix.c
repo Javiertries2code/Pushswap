@@ -14,7 +14,7 @@ void	radix(t_list **ends, int bits)
 		counter = ends[0]->data_A->stack_size;
 		while (tail && counter-- > 0)
 		{
-			if (((tail->xmap >> bits) & 1) == 0)
+			if (((tail->xmap >> bits) & 1) == 1)
 				ra(ends, print_fun("ra"));
 			else
 				pb(ends, print_fun("pb"));
@@ -45,7 +45,6 @@ int	already_ordered(t_list **ends)
 		}
 		else
 		{
-			printf("already_ordered\n");
 			exiting("YW", NULL, ends);
 		}
 	}
@@ -59,7 +58,7 @@ int	in_order(t_list **ends)
 	head = ends[0];
 	while (head)
 	{
-		if (head->prev && head->x < head->prev->x)
+		if (head->prev && head->x > head->prev->x)
 			return (0);
 		if (head->next)
 			head = head->next;

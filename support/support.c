@@ -2,11 +2,12 @@
 
 void	print(t_list *head)
 {
+	printf("PRINT\n");
 	while (head)
 	{
-		printf("\nFORWARD\nvalue\t%d\tindex\t%d\t%c\n ", head->x, head->index, head->stack);
+		
+		printf("\nvalue    %d\n ", head->x);
 	
-		printf("\nbigger\t%d\tsmaller\t%d\n ", head->bigger, head->smaller);
 		if (head->next)
 			head = head->next;
 		else
@@ -16,19 +17,24 @@ void	print(t_list *head)
 
 void	rprint(t_list *tail)
 {
+	printf("RPRINT\n");
+
 	while (tail)
 	{
-		printf("\nBackwards\nvalue\t%d\tindex\t%d\t%c\n ", tail->x, tail->index, tail->stack);
+		printf("\n       %d\n ", tail->x);
 	
-		printf("\nbigger\t%d\tsmaller\t%d\n ", tail->bigger, tail->smaller);
 		if (tail->prev)
 			tail = tail->prev;
 		else
 			break ;
 	}
+	printf("-----------------------\n");
+	printf("--------Stack A---------------\n");
+
 }
 
-void	print_stack(t_list **ends)
+void	
+print_stack(t_list **ends)
 {
 	t_list	*tail_a;
 	t_list	*tail_b;
@@ -37,13 +43,13 @@ void	print_stack(t_list **ends)
 		return ;
 	tail_a = ends[1];
 	tail_b = ends[3];
-printf("VALOR  x NODO ENCIMA PILA A \t %d\n", ends[1]->x);
-
-printf("VALOR x  NODO FONDO STACK A \t %d\n\n ", ends[0]->x);
-printf("INDEX NODO ENCIMA PILA A \t %d\n", ends[1]->index);
-printf("INDEX  NODO FONDO STACK A \t %d\n ", ends[0]->index);
-// printf("ALOR NODO ENCIMA PILA B \t %d\n ", ends[2]->x);
-// printf("VALOR NODO FONDO STACK B \t %d\n ", ends[3]->x);
+printf("VALOR  ends[1]->x) NODO ENCIMA PILA A \t %d\n", ends[1]->x);
+printf("VALOR ends[0]->x)  NODO FONDO STACK A \t %d\n\n ", ends[0]->x);
+// printf("INDEX NODO ENCIMA PILA A \t %d\n", ends[1]->index);
+// printf("INDEX  NODO FONDO STACK A \t %d\n ", ends[0]->index);
+if(ends[2] != NULL && ends[3] != NULL )
+{printf("VALOR ends[2]->x) ENCIMA PILA B \t %d\n ", ends[2]->x);
+printf("VALOR ends[3]->x)  FONDO STACK B \t %d\n ", ends[3]->x);}
 
 
 	while (tail_a || tail_b)

@@ -4,14 +4,15 @@
 
 int	main(int argc, char *argv[])
 {
-	int i;
-	t_list *ends[4];
-	t_data *datarr[2];
+	int		i;
+	t_list	*ends[4];
+	t_data	*datarr[2];
+	t_data	*data_A;
+	t_data	*data_B;
 
 	i = 0;
-
-	t_data *data_A = ft_calloc(1, sizeof(t_data));
-	t_data *data_B = ft_calloc(1, sizeof(t_data));
+	data_A = ft_calloc(1, sizeof(t_data));
+	data_B = ft_calloc(1, sizeof(t_data));
 	ends[0] = NULL;
 	ends[1] = NULL;
 	ends[2] = NULL;
@@ -27,8 +28,9 @@ int	main(int argc, char *argv[])
 	extrafree(ends, data_A, data_B);
 	return (0);
 }
-void extrafree(t_list **ends, t_data *data_A, t_data *data_B){
 
+void	extrafree(t_list **ends, t_data *data_A, t_data *data_B)
+{
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);
 	free(data_A);

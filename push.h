@@ -80,6 +80,9 @@ void				turn(t_list **ends);
 
 // SORTING
 
+//testing
+void testing(t_list **ends);
+
 int					highest_second(t_list *head, int value);
 
 void				sorting_four_five(t_list **ends);
