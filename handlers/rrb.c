@@ -14,11 +14,12 @@ void	rrb(t_list **ends, void *print_fun)
 	ends[3] = ends[2];
 	ends[2] = tmp;
 }
+
 void	turn(t_list **ends)
 {
 	t_list	*tmp;
 
-	if (!ends[2] || !ends[2]->next )
+	if (!ends[2] || !ends[2]->next)
 		return ;
 	tmp = ends[2]->next;
 	ends[3]->next = ends[2];

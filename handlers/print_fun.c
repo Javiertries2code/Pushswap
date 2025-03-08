@@ -6,3 +6,4 @@ void	*print_fun(char *str)
 	write(1, "\n", 1);
 	return ((void *)str);
 }
+

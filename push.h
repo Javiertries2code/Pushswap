@@ -46,7 +46,7 @@ enum
 	MIN_MAX_ERROR = 9999999999LL
 };
 
-enum				Calls
+enum				e_codes
 {
 	ERROR = 0,
 	SUCCESS = 1,
@@ -77,19 +77,12 @@ void				pass_a(t_list **ends);
 void				pass_b(t_list **ends);
 void				turn(t_list **ends);
 
-
 // SORTING
 
-//testing
-void testing(t_list **ends);
-
 int					highest_second(t_list *head, int value);
-
 void				sorting_four_five(t_list **ends);
-
 void				sorting_five(t_list **ends);
 void				sorting_four(t_list **ends);
-
 void				solve_one_middle(t_list **ends);
 void				radix(t_list **ends, int bits);
 void				sorting_five(t_list **ends);

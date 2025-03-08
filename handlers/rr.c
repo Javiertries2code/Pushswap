@@ -2,11 +2,10 @@
 
 void	rr(t_list **ends, void *print_fun)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!ends[1] || !ends[3] || !ends[3]->prev || !ends[1]->prev || !print_fun)
 		return ;
-
 	tmp = ends[3]->prev;
 	ends[2]->prev = ends[3];
 	ends[3]->prev->next = NULL;
@@ -22,3 +21,4 @@ void	rr(t_list **ends, void *print_fun)
 	ends[0] = ends[1];
 	ends[1] = tmp;
 }
+

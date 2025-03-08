@@ -76,3 +76,4 @@ void	back_to_a(t_list **ends)
 	while (ends[3])
 		pa(ends, print_fun("pa"));
 }
+

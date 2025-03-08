@@ -30,6 +30,7 @@ void	set_stack(t_list *head, t_list *tail, char stack)
 			break ;
 	}
 }
+
 void	reset_stack(t_list *head, char stack)
 {
 	while (head)
@@ -45,6 +46,7 @@ void	reset_stack(t_list *head, char stack)
 			break ;
 	}
 }
+
 void	set_element_stack(t_list *tail, t_list *head)
 {
 	if (tail->x > head->x)
@@ -57,7 +59,6 @@ void	rev_stack(t_list **ends)
 {
 	while (ends[1])
 		pass_b(ends);
-
 	while (ends[3])
 	{
 		turn(ends);

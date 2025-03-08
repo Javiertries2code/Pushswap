@@ -4,7 +4,6 @@ void	ss(t_list **ends, t_list *tmp, int i, void *print_fun)
 {
 	if (!ends[1] || !ends[3] || !ends[1]->prev || !ends[3]->prev || !print_fun)
 		return ;
-
 	while (i != 5)
 	{
 		tmp = ends[i]->prev;
@@ -29,3 +28,4 @@ void	ss(t_list **ends, t_list *tmp, int i, void *print_fun)
 		i = i + 2;
 	}
 }
+

@@ -2,7 +2,7 @@
 
 void	pb(t_list **ends, void *print_fun)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (ends[0] == NULL || ends[1] == NULL || !print_fun)
 		return ;
@@ -26,12 +26,11 @@ void	pb(t_list **ends, void *print_fun)
 		ends[2] = ends[3];
 }
 
-
 void	pass_b(t_list **ends)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
-	if (ends[0] == NULL || ends[1] == NULL )
+	if (ends[0] == NULL || ends[1] == NULL)
 		return ;
 	tmp = ends[1];
 	if (ends[1]->prev)

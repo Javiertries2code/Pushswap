@@ -5,9 +5,7 @@ void	print(t_list *head)
 	printf("PRINT\n");
 	while (head)
 	{
-		
 		printf("\nvalue    %d\n ", head->x);
-	
 		if (head->next)
 			head = head->next;
 		else
@@ -18,11 +16,9 @@ void	print(t_list *head)
 void	rprint(t_list *tail)
 {
 	printf("RPRINT\n");
-
 	while (tail)
 	{
 		printf("\n       %d\n ", tail->x);
-	
 		if (tail->prev)
 			tail = tail->prev;
 		else
@@ -30,11 +26,9 @@ void	rprint(t_list *tail)
 	}
 	printf("-----------------------\n");
 	printf("--------Stack A---------------\n");
-
 }
 
-void	
-print_stack(t_list **ends)
+void	print_stack(t_list **ends)
 {
 	t_list	*tail_a;
 	t_list	*tail_b;
@@ -43,22 +37,21 @@ print_stack(t_list **ends)
 		return ;
 	tail_a = ends[1];
 	tail_b = ends[3];
-printf("VALOR  ends[1]->x) NODO ENCIMA PILA A \t %d\n", ends[1]->x);
-printf("VALOR ends[0]->x)  NODO FONDO STACK A \t %d\n\n ", ends[0]->x);
-// printf("INDEX NODO ENCIMA PILA A \t %d\n", ends[1]->index);
-// printf("INDEX  NODO FONDO STACK A \t %d\n ", ends[0]->index);
-if(ends[2] != NULL && ends[3] != NULL )
-{printf("VALOR ends[2]->x) ENCIMA PILA B \t %d\n ", ends[2]->x);
-printf("VALOR ends[3]->x)  FONDO STACK B \t %d\n ", ends[3]->x);}
-
-
+	// printf("VALOR  ends[1]->x) NODO ENCIMA PILA A \t %d\n", ends[1]->x);
+	// printf("VALOR ends[0]->x)  NODO FONDO STACK A \t %d\n\n ", ends[0]->x);
+	// if (ends[2] != NULL && ends[3] != NULL)
+	// {
+	// 	printf("VALOR ends[2]->x) ENCIMA PILA B \t %d\n ", ends[2]->x);
+	// 	printf("VALOR ends[3]->x)  FONDO STACK B \t %d\n ", ends[3]->x);
+	// }
 	while (tail_a || tail_b)
 	{
 		if (tail_a && tail_b)
 			printf("\n\tind -%d\t\t%d\t\t\t%d\tind -%d\n ", tail_a->index,
 				tail_a->x, tail_b->x, tail_b->index);
 		else if (tail_a && !tail_b)
-			printf("\n\t\t\t%d\t\t\t-\n\tmapeado - %d\n",  tail_a->x, tail_a->xmap);
+			printf("\n\t\t\t%d\t\t\t-\n\tmapeado - %d\n", tail_a->x,
+				tail_a->xmap);
 		else if (!tail_a && tail_b)
 			printf("\n\t\t\t-\t\t\t%d\tind -%d\n ", tail_b->x, tail_b->index);
 		else
@@ -79,6 +72,5 @@ printf("VALOR ends[3]->x)  FONDO STACK B \t %d\n ", ends[3]->x);}
 		}
 	}
 	printf("\t-------------------------------------------\nStack\t\t\tA\t\t\tB\n ");
-
 }
 

@@ -75,9 +75,9 @@ static char	*new_str(const char *s, char c)
 
 char	**ft_split(const char *s, char c)
 {
-	char **ptr;
-	size_t i;
-	size_t j;
+	char	**ptr;
+	size_t	i;
+	size_t	j;
 
 	if (!s)
 		return (NULL);

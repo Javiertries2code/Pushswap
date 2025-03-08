@@ -1,5 +1,4 @@
 
-
 #include "push.h"
 
 int	main(int argc, char *argv[])
@@ -28,8 +27,7 @@ int	main(int argc, char *argv[])
 	extrafree(ends, data_A, data_B);
 	return (0);
 }
-
-void	extrafree(t_list **ends, t_data *data_A, t_data *data_B)
+void extrafree(t_list **ends, t_data *data_A, t_data *data_B)
 {
 	free_ahead(ends[0]);
 	free_ahead(ends[2]);

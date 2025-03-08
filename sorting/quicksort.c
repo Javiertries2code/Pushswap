@@ -1,97 +1,19 @@
 #include "../push.h"
 
-// void	sorting_four(t_list **ends)
-// {
-// 	int		i;
-// 	t_list	*head;
-
-// 	head = ends[1];
-// 	while (head)
-// 	{
-// 		i = highest_second(ends[0], head->x);
-// 		head = head->prev;
-// 		if (i == 0)
-// 		{
-// 			pb(ends, print_fun("pb"));
-// 			break ;
-// 		}
-// 		else
-// 			ra(ends, print_fun("ra"));
-// 	}
-// 	sorting_three(ends);
-// 	pa(ends, print_fun("pa"));
-// }
-
-// void	sorting_five(t_list **ends)
-// {
-// 	int		i;
-// 	int		j;
-// 	t_list	*head;
-
-// 	head = ends[1];
-// 	j = 2;
-// 	while (head && j != 0)
-// 	{
-// 		i = highest_second(ends[0], head->x);
-// 		head = head->prev;
-// 		if (i == 0)
-// 		{
-// 			pb(ends, print_fun("pb"));
-// 			j--;
-// 		}
-// 		else
-// 			ra(ends, print_fun("ra"));
-// 	}
-// 	sorting_three(ends);
-// 	if (ends[3]->x < ends[3]->prev->x)
-// 		sb(ends, print_fun("sb"));
-// 	pa(ends, print_fun("pa"));
-// 	pa(ends, print_fun("pa"));
-// }
-
-// void	sorting_four_five(t_list **ends)
-// {
-// 	if ((ends[1]->index) == 4)
-// 	{
-// 		sorting_four(ends);
-// 	}
-// 	else if (ends[1]->index == 5)
-// 	{
-// 		sorting_five(ends);
-// 	}
-// 	exiting("YW", NULL, ends);
-// }
-
-// int	highest_second(t_list *head, int value)
-// {
-// 	int i;
-
-// 	i = 0;
-// 	while (head)
-// 	{
-// 		if (head->x > value)
-// 			i++;
-// 		head = head->next;
-// 	}
-// 	return (i);
-// }
-
-void sorting_four(t_list **ends)
+void	sorting_four(t_list **ends)
 {
-	int i;
-
-	t_list *head;
+	int		i;
+	t_list	*head;
 
 	head = ends[1];
 	while (head)
 	{
-
 		i = highest_second(ends[0], head->x);
 		head = head->prev;
 		if (i == 0)
 		{
 			pb(ends, print_fun("pb"));
-			break;
+			break ;
 		}
 		else
 			ra(ends, print_fun("ra"));
@@ -100,11 +22,11 @@ void sorting_four(t_list **ends)
 	pa(ends, print_fun("pa"));
 }
 
-void sorting_five(t_list **ends)
+void	sorting_five(t_list **ends)
 {
-	int i;
-	int j;
-	t_list *head;
+	int		i;
+	int		j;
+	t_list	*head;
 
 	head = ends[1];
 	j = 2;
@@ -127,7 +49,7 @@ void sorting_five(t_list **ends)
 	pa(ends, print_fun("pa"));
 }
 
-void sorting_four_five(t_list **ends)
+void	sorting_four_five(t_list **ends)
 {
 	if ((ends[1]->index) == 4)
 	{
@@ -139,25 +61,19 @@ void sorting_four_five(t_list **ends)
 		sorting_five(ends);
 		print_stack(ends);
 	}
-
 	exiting("YW", NULL, ends);
 }
 
-int highest_second(t_list *head, int value)
+int	highest_second(t_list *head, int value)
 {
-	printf(" value recived highes   %d  \n", value);
-
-	int i;
+	int	i;
 
 	i = 0;
 	while (head)
 	{
 		if (head->x < value)
 			i++;
-
-		printf("head->x %d  value i  %d  \t\t\thighest_second\n", head->x, i);
-
 		head = head->next;
 	}
-	return i;
+	return (i);
 }

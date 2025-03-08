@@ -1,8 +1,8 @@
 #include "../push.h"
 
-void	rb(t_list **ends, void *print_fun)
+void rb(t_list **ends, void *print_fun)
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!ends[3] || !ends[3]->prev || !print_fun)
 		return ;

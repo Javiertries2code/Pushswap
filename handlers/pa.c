@@ -25,10 +25,10 @@ void	pa(t_list **ends, void *print_fun)
 	if (!ends[0])
 		ends[0] = ends[1];
 }
+
 void	pass_a(t_list **ends)
 {
 	t_list	*tmp;
-
 
 	if (ends[2] == NULL || !ends[3])
 		return ;

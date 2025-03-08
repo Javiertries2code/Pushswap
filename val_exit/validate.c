@@ -16,15 +16,6 @@ void	basic_valid(int argc, char *argv[], t_data *datarr[])
 	}
 }
 
-/**
- * brief Calculates how many elements of the list are higher and smalles,
-	setting those counters. So to know deviation over
- * the middle number, 1/2 +-1
- * It could be deleted, but i am not sure
- *
- * param tail last element of one stack. Top
- * param head first element of one stack. Base
- */
 void	set_element(t_list *tail, t_list *head)
 {
 	if (tail->x > head->x)
@@ -33,19 +24,6 @@ void	set_element(t_list *tail, t_list *head)
 		tail->bigger++;
 }
 
-/**
- * brief checks wether is and empty space and moves forward,
- *  or if its a negative with  in its first position [0]
- * notice i moved the pointer s++ in case of emprty space, so the [0] position
- * should be the first one with another content, or a unmber ebtwen 0 and 9
- *
- * later on, it it finds ampty space again is gonaa return the SPLIT enum
- *
- * else its a nonvalid chain and returns error
- *
- * ih the chain ends up wit no SPLIT or ERROR return, it wil return SUCCESS
- *
- */
 int	valid(const char *s, char **splitted, t_list **ends)
 {
 	int	i;
@@ -67,22 +45,6 @@ int	valid(const char *s, char **splitted, t_list **ends)
 	return (SUCCESS);
 }
 
-/**
- * brief  make the vaidations and splits  the argv is necessary,
-	then it creates a new list element
- * or exits if Error. It
- *
- * param argv it gets from the main function the argv's one by one
-
-	* param ends t_list *ends[]- holds head pointers to head and tail of stack a and stack b
-
-	* param datarr struct holding usefull data from the tlist so to be vailale for every element
- * see valid
- * see exiting
- * see count_split
- * see new_element
- *
- */
 void	val_split(char *argv, t_list **ends, t_data **datarr)
 {
 	int		i;
@@ -111,12 +73,7 @@ void	val_split(char *argv, t_list **ends, t_data **datarr)
 	}
 }
 
-/**
- * brief After the list is already created,
-	it search for duplicates throwing error
- * in case of finding one
 
- */
 void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 {
 	head = ends[0];

@@ -1,3 +1,5 @@
+
+
 #include "../push.h"
 
 void	set_element_stack(t_list *tail, t_list *head);
@@ -23,8 +25,6 @@ void	count_set(t_list **ends)
 			ends[2]->data_A->head_value = ends[2]->x;
 			ends[2]->data_A->tail_value = ends[3]->x;
 		}
-		////PROBABLY UNUSED
-		// find_pv(ends, NULL);
 	}
 }
 
@@ -43,38 +43,3 @@ void	count_index(t_list *head)
 			break ;
 	}
 }
-// PROBABLY UNUSED
-// void	find_pv(t_list **ends, t_list *head)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < 4)
-// 	{
-// 		head = ends[i];
-// 		if (head)
-// 		{
-// 			while (head)
-// 			{
-// 				if ((head->bigger - head->smaller) == 0 && i == 0)
-// 				{
-// 					head->data_A->pv = head->x;
-// 					break ;
-// 				}
-// 				if ((head->bigger - head->smaller) == 0 && i == 2)
-// 				{
-// 					head->data_B->pv = head->x;
-// 					break ;
-// 				}
-// 				if ((head->bigger - head->smaller == -1 || head->bigger
-// 						- head->smaller == 1) && i == 0)
-// 					head->data_A->pv = head->x;
-// 				if ((head->bigger - head->smaller == -1 || head->bigger
-// 						- head->smaller == 1) && i == 2)
-// 					head->data_B->pv = head->x;
-// 				head = head->next;
-// 			}
-// 		}
-// 		i += 2;
-// 	}
-// }
