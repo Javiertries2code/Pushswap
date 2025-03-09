@@ -49,6 +49,6 @@ void	new_element(t_list **ends, char *x, t_data **datarr)
 	ends[0]->stack = 'A';
 	ends[0]->smaller = 0;
 	ends[0]->bigger = 0;
-	ends[0]->data_A = datarr[0];
-	ends[0]->data_B = datarr[1];
+	ends[0]->data_a = datarr[0];
+	ends[0]->data_b = datarr[1];
 }

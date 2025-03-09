@@ -37,13 +37,7 @@ void	print_stack(t_list **ends)
 		return ;
 	tail_a = ends[1];
 	tail_b = ends[3];
-	// printf("VALOR  ends[1]->x) NODO ENCIMA PILA A \t %d\n", ends[1]->x);
-	// printf("VALOR ends[0]->x)  NODO FONDO STACK A \t %d\n\n ", ends[0]->x);
-	// if (ends[2] != NULL && ends[3] != NULL)
-	// {
-	// 	printf("VALOR ends[2]->x) ENCIMA PILA B \t %d\n ", ends[2]->x);
-	// 	printf("VALOR ends[3]->x)  FONDO STACK B \t %d\n ", ends[3]->x);
-	// }
+
 	while (tail_a || tail_b)
 	{
 		if (tail_a && tail_b)

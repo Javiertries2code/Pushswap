@@ -17,16 +17,15 @@ typedef struct s_list
 	struct s_list	*prev;
 	char			stack;
 	int				stack_size;
-	struct s_data	*data_A;
-	struct s_data	*data_B;
+	struct s_data	*data_a;
+	struct s_data	*data_b;
 	int				smaller;
 	int				bigger;
 	int				smaller_stack;
 	int				bigger_stack;
 
 }					t_list;
-// the thing in here is that all elements must point to the same data structure
-// hence while creating it in new  element
+
 typedef struct s_data
 {
 	int				pv;
@@ -71,7 +70,7 @@ void				set_element_stack(t_list *tail, t_list *head);
 void				set_stack(t_list *head, t_list *tail, char stack);
 void				reset_stack(t_list *head, char stack);
 void				count_index(t_list *head);
-void				extrafree(t_list **ends, t_data *data_A, t_data *data_B);
+void				extrafree(t_list **ends, t_data *data_a, t_data *data_b);
 void				rev_stack(t_list **ends);
 void				pass_a(t_list **ends);
 void				pass_b(t_list **ends);

@@ -2,8 +2,10 @@
 
 void sorting(t_list **ends)
 {
-	rev_stack(ends);
+	//rev_stack(ends);
 	count_set(ends);
+	//print_stack(ends);
+
 	already_ordered(ends);
 	if (ends[1]->index < 2)
 		exiting("YW", NULL, ends);

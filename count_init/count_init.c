@@ -13,8 +13,8 @@ void	count_set(t_list **ends)
 		reset_stack(ends[0], 'A');
 		set_stack(ends[0], ends[1], 'A');
 		count_index(ends[0]);
-		ends[0]->data_A->head_value = ends[0]->x;
-		ends[0]->data_A->tail_value = ends[1]->x;
+		ends[0]->data_a->head_value = ends[0]->x;
+		ends[0]->data_a->tail_value = ends[1]->x;
 		{
 		}
 		if (ends[2])
@@ -22,8 +22,8 @@ void	count_set(t_list **ends)
 			reset_stack(ends[2], 'B');
 			set_stack(ends[2], ends[3], 'B');
 			count_index(ends[2]);
-			ends[2]->data_A->head_value = ends[2]->x;
-			ends[2]->data_A->tail_value = ends[3]->x;
+			ends[2]->data_a->head_value = ends[2]->x;
+			ends[2]->data_a->tail_value = ends[3]->x;
 		}
 	}
 }

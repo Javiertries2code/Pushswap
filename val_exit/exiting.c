@@ -12,7 +12,7 @@ int	count_split(char **argv)
 
 void	exiting(char *str, char **splitted, t_list **ends)
 {
-	print_stack(ends);
+	//print_stack(ends);
 	if (str && str[0] == 'Y' && (int)str[1] == 'W')
 	{
 		free_list(ends);
@@ -46,8 +46,8 @@ void	free_list(t_list **ends)
 {
 	t_list	*tmp;
 
-	free(ends[1]->data_A);
-	free(ends[1]->data_B);
+	free(ends[1]->data_a);
+	free(ends[1]->data_b);
 	while (ends[1])
 	{
 		tmp = ends[1]->prev;

@@ -11,7 +11,7 @@ void	radix(t_list **ends, int bits)
 	{
 		if (in_order(ends) == 0)
 			tail = ends[1];
-		counter = ends[0]->data_A->stack_size;
+		counter = ends[0]->data_a->stack_size;
 		while (tail && counter-- > 0)
 		{
 			if (((tail->xmap >> bits) & 1) == 1)
