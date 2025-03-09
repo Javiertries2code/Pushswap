@@ -73,7 +73,6 @@ void	val_split(char *argv, t_list **ends, t_data **datarr)
 	}
 }
 
-
 void	find_duplicate(t_list **ends, t_list *head, t_list *tail)
 {
 	head = ends[0];

@@ -54,12 +54,10 @@ void	sorting_four_five(t_list **ends)
 	if ((ends[1]->index) == 4)
 	{
 		sorting_four(ends);
-		
 	}
 	else if (ends[1]->index == 5)
 	{
 		sorting_five(ends);
-	
 	}
 	exiting("YW", NULL, ends);
 }

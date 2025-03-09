@@ -108,7 +108,7 @@ void				find_duplicate(t_list **ends, t_list *head, t_list *tail);
 void				print(t_list *head);
 void				rprint(t_list *tail);
 void				testprint(t_list **ends);
-void				print_stack(t_list **ends);
+
 
 // CREATE DESTROY
 void				free_datarr(t_data **datarr);
