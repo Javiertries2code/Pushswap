@@ -28,16 +28,20 @@ void	exiting(char *str, char **splitted, t_list **ends)
 	exit(1);
 }
 
+
+
 int	free_pointer(char **numbers)
 {
 	int	i;
 
 	i = count_split(numbers);
+
 	while (--i >= 0)
 	{
 		free(numbers[i]);
 		numbers[i] = NULL;
 	}
+	free(numbers);
 	return (i);
 }
 
