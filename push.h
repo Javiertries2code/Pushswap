@@ -65,9 +65,11 @@ void				to_binary(t_list *head);
 int					convert_binary(int ch);
 
 // init
+void				set_stack(t_list *hed, t_list *tl, char stck, t_list *aux);
+//void				set_stack(t_list *head, t_list *tail, char stack);
+
 void				count_set(t_list **ends);
 void				set_element_stack(t_list *tail, t_list *head);
-void				set_stack(t_list *head, t_list *tail, char stack);
 void				reset_stack(t_list *head, char stack);
 void				count_index(t_list *head);
 void				extrafree(t_list **ends, t_data *data_a, t_data *data_b);

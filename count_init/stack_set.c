@@ -1,12 +1,10 @@
+
 #include "../push.h"
 
-void	set_stack(t_list *head, t_list *tail, char stack)
+void	set_stack(t_list *head, t_list *tail, char stack, t_list *aux)
 {
-	t_list	*aux;
-
 	if (!head)
 		return ;
-	aux = tail;
 	while (head)
 	{
 		head->index++;
@@ -24,13 +22,9 @@ void	set_stack(t_list *head, t_list *tail, char stack)
 				break ;
 			}
 		}
-		if (head->next)
-			head = head->next;
-		else
-			break ;
+		head = head->next;
 	}
 }
-
 void	reset_stack(t_list *head, char stack)
 {
 	while (head)
