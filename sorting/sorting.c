@@ -1,9 +1,9 @@
 #include "../push.h"
 
-void sorting(t_list **ends)
+void	sorting(t_list **ends)
 {
 	count_set(ends);
-	already_ordered(ends);
+	in_order(ends);
 	if (ends[1]->index < 2)
 		exiting("YW", NULL, ends);
 	if (ends[1]->index == 2 && ends[0]->x > ends[1]->x)

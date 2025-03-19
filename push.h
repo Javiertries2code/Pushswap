@@ -55,7 +55,6 @@ enum				e_codes
 	ST_EVAL = 1,
 };
 
-// mapping
 void				map_list(t_list **ends, t_list *head);
 void				find_min_abs(t_list *head);
 void				assign_index(t_list **ends);
@@ -63,11 +62,7 @@ void				find_min_rel(t_list *head);
 void				find_max(t_list *head);
 void				to_binary(t_list *head);
 int					convert_binary(int ch);
-
-// init
 void				set_stack(t_list *hed, t_list *tl, char stck, t_list *aux);
-//void				set_stack(t_list *head, t_list *tail, char stack);
-
 void				count_set(t_list **ends);
 void				set_element_stack(t_list *tail, t_list *head);
 void				reset_stack(t_list *head, char stack);
@@ -77,9 +72,6 @@ void				rev_stack(t_list **ends);
 void				pass_a(t_list **ends);
 void				pass_b(t_list **ends);
 void				turn(t_list **ends);
-
-// SORTING
-
 int					highest_second(t_list *head, int value);
 void				sorting_four_five(t_list **ends);
 void				sorting_five(t_list **ends);
